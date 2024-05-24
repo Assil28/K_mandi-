@@ -35,6 +35,48 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  get: ^4.6.1
+  #DateTime
+  jiffy: ^6.2.1
+  intl: ^0.18.1
+  http: ^1.2.0
+  #Images
+  cached_network_image: ^3.2.0 
+  image_picker: ^1.0.8
+  #Animate
+  show_up_animation: ^2.0.0
+  auto_animated: ^3.0.1
+  #Google Map
+  flutter_polyline_points: ^2.0.0
+  google_maps_flutter: ^2.1.5
+  geolocator: ^11.1.0
+  geocoding: ^3.0.0
+  #Firebase And Notification 
+  firebase_messaging: ^14.7.19
+  firebase_core: ^2.27.0
+  flutter_local_notifications: ^17.1.2
+  cloud_firestore: ^4.15.8
+  #Local Data Cache
+  sqflite: ^2.0.2
+  shared_preferences: ^2.0.15
+  path: ^1.8.0
+  #Qrcode 
+  qr_flutter: ^4.0.0
+  scan: ^1.6.0
+  grouped_list: ^5.1.2
+  url_launcher: ^6.1.2
+  dropdown_search: ^5.0.6
+  badges: ^3.1.2
+  #Icon 
+  flutter_svg: ^2.0.10+1
+  font_awesome_flutter: ^10.1.0
+  fluttericon: ^2.0.0
+  dartz: ^0.10.1
+  #Google Auth
+  google_sign_in: ^6.2.1  
+  device_preview: ^1.1.0
+  responsive_builder: ^0.7.0
+  image_pickers: ^2.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -45,7 +87,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
