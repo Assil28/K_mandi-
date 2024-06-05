@@ -102,7 +102,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/images/
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -119,8 +119,8 @@ flutter:
   fonts:
     - family: Cairo
       fonts:
-        - asset: assets/fonts/Cairo-Regular.ttf
-        - asset: assets/fonts/Cairo-Bold.ttf
+        - asset: assets\fonts\Cairo\Cairo-Regular.ttf
+        - asset: assets\fonts\Cairo\Cairo-Bold.ttf
           weight: 700
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
