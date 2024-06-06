@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:k_mandi/routes.dart';
 import 'package:k_mandi/view/screen/onboarding.dart';
 
 void main() {
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const OnBoarding(),
+      routes: routes  ,
     );
   }
 }
 
+ 
