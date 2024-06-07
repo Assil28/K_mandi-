@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/localization/changelocal.dart';
+import 'package:k_mandi/core/localization/translation.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/routes.dart';
+import 'package:k_mandi/view/screen/language.dart';
 import 'package:k_mandi/view/screen/onboarding.dart';
 
 void main() async {
@@ -18,7 +21,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+   LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
+      translations: MyTranslation(),
+      locale: controller.language,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -35,7 +41,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const OnBoarding(),
+      home: const Language(),
       routes: routes,
     );
   }
