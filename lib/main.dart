@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/routes.dart';
 import 'package:k_mandi/view/screen/onboarding.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
+
   runApp(const MyApp());
 }
 
