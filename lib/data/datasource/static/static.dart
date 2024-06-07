@@ -15,8 +15,8 @@ List<OnBoardingModel> onBoardingList = [
       title: "Track Your Order",
       body: "Track Your Order .........",
       image: AppImageAsset.onboardingImageThree),
-  OnBoardingModel(
-      title: "Fast Delivery ",
-      body: "Fast Delivery  ........",
-      image: AppImageAsset.onboardingImageFour),
+  // OnBoardingModel(
+  //     title: "Fast Delivery ",
+  //     body: "Fast Delivery  ........",
+  //     image: AppImageAsset.onboardingImageFour),
 ];

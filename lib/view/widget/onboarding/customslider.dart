@@ -17,21 +17,22 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
               itemCount: onBoardingList.length,
               itemBuilder: (context, i) => Column(
                     children: [
-                      Text(
-                        onBoardingList[i].title!,
-                        style: Theme.of(context).textTheme.headline1,
-                      ),
-                      const SizedBox(
-                        height: 80,
-                      ),
+                     
                       Image.asset(
                         onBoardingList[i].image!,
-                        width: 300,
-                        height: 230,
-                        fit: BoxFit.fill,
+                        // width: 300,
+                        // height: 230,
+                        // fit: BoxFit.fill,
                       ),
                       const SizedBox(
                         height: 80,
+                      ),
+                       Text(
+                        onBoardingList[i].title!,
+                        style: Theme.of(context).textTheme.headline1,
+                      ), 
+                        const SizedBox(
+                        height: 20,
                       ),
                       Container(
                         width: double.infinity,

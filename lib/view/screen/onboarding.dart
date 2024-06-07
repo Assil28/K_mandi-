@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/onboarding_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
-import 'package:k_mandi/data/datasource/static/static.dart';
 import 'package:k_mandi/view/widget/onboarding/custombutton.dart';
 import 'package:k_mandi/view/widget/onboarding/customslider.dart';
 import 'package:k_mandi/view/widget/onboarding/dotcontroller.dart';
@@ -15,11 +14,12 @@ class OnBoarding extends StatelessWidget {
     Get.put(OnBoardingControllerImp());
     
     return const Scaffold(
+      backgroundColor: AppColor.backgroundColor,
         body: SafeArea(
             child: Column(
       children: [
         Expanded(
-          flex: 3,
+          flex: 4,
           child: CustomSliderOnBoarding(),
         ),
         Expanded(
