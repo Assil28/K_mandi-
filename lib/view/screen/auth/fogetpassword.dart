@@ -1,7 +1,8 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:k_mandi/controller/auth/login_controller.dart';
+import 'package:http/http.dart';
+import 'package:k_mandi/controller/auth/forgetpassword_controller.dart';
+import 'package:k_mandi/controller/auth/signup_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
@@ -10,18 +11,19 @@ import 'package:k_mandi/view/widget/auth/customtexttitleauth.dart';
 import 'package:k_mandi/view/widget/auth/logoauth.dart';
 import 'package:k_mandi/view/widget/auth/textsignup.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class ForgetPassword extends StatelessWidget {
+  const ForgetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+
+    ForgetPasswordControllerImp controller= Get.put(ForgetPasswordControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
-          title: Text("Sign In",
+          title: Text("8".tr,
               style: Theme.of(context).textTheme.headline1!.copyWith(
                     color: AppColor.grey,
                   )),
@@ -30,9 +32,8 @@ class Login extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: ListView(
             children: [
-              const LogoAuth(),
-              CustomTextTitleAuth(
-                text: "2".tr,
+               CustomTextTitleAuth(
+                text: "18".tr,
               ),
               const SizedBox(
                 height: 10,
@@ -41,38 +42,23 @@ class Login extends StatelessWidget {
                 text: "3".tr,
               ),
               const SizedBox(
-                height: 45,
+                height: 15,
               ),
+              
+
               CustomTextFormAuth(
-                hinttext: "6".tr,
-                labeltext: "4".tr,
+                hinttext: "6".tr, labeltext: "4".tr,
                 icondata: Icons.email_outlined,
-                mycontroller: controller.email,
+                mycontroller:controller.email
               ),
-              CustomTextFormAuth(
-                  hinttext: "7".tr,
-                  labeltext: "5".tr,
-                  icondata: Icons.lock_outlined,
-                  mycontroller: controller.password),
-              InkWell(
-                onTap: () {
-                  controller.goToForgetPassword();
-                },
-                child: Text(
-                  "8".tr,
-                  textAlign: TextAlign.end,
-                ),
-              ),
-              CustomButtonAuth(text: "9".tr, onPressed: () {}),
+
+            
+              CustomButtonAuth(text: "19".tr, onPressed: () {}),
               const SizedBox(
                 height: 30,
               ),
-              CustomTextSignUpOrSignIn(
-                  textone: "10".tr,
-                  texttwo: "11".tr,
-                  onTap: () {
-                    controller.goToSignUp();
-                  })
+             
+              
             ],
           ),
         ));
