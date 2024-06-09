@@ -5,8 +5,8 @@ import 'package:k_mandi/core/localization/changelocal.dart';
 import 'package:k_mandi/core/localization/translation.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/routes.dart';
+import 'package:k_mandi/view/screen/auth/login.dart';
 import 'package:k_mandi/view/screen/language.dart';
-import 'package:k_mandi/view/screen/onboarding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,16 +32,23 @@ class MyApp extends StatelessWidget {
         textTheme: const TextTheme(
           headline1: TextStyle(
               fontWeight: FontWeight.bold, fontSize: 24, color: AppColor.balck),
+               headline2: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 26, color: AppColor.balck),
           bodyText1: TextStyle(
             height: 2,
             color: AppColor.grey,
             fontWeight: FontWeight.bold,
             fontSize: 14,
           ),
+           bodyText2: TextStyle(
+            height: 2,
+            color: AppColor.grey,
+            fontSize: 14,
+          ),
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const Language(),
+      home: const Login(),
       routes: routes,
     );
   }
