@@ -26,6 +26,10 @@ class MyTranslation extends Translations {
           "19": "تحقق ",
            "20":"التحقق من الشفرة",
           "21":"رمز التحقق",
+          "22":"الرجاء إدخال بريدك الإلكتروني لتلقي رمز التحقق",
+          "23":"الرجاء إدخال الرمز الرقمي المرسل إلى",
+          "24":"",
+          "25":"",
         },
         "en": {
           "1": "Choose Language",
@@ -50,6 +54,10 @@ class MyTranslation extends Translations {
           "19": "Check",
           "20":"Check Code",
           "21":"Verification Code",
+          "22":"Please Enter Your Email Adress To Receive A verfication Code",
+          "23":"Please Enter The Digit Code Sent To",
+          "24":"",
+          "25":"",
         },
       };
 }
