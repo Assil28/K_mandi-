@@ -1,6 +1,7 @@
   import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/forgetpassword_controller.dart';
+import 'package:k_mandi/controller/auth/resetpassword_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
@@ -13,13 +14,13 @@ class ResetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // ForgetPasswordControllerImp controller= Get.put(ForgetPasswordControllerImp());
+    ResetPasswordControllerImp controller= Get.put(ResetPasswordControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
-          title: Text("Forget Password",
+          title: Text("24".tr,
               style: Theme.of(context).textTheme.headline1!.copyWith(
                     color: AppColor.grey,
                   )),
@@ -29,13 +30,13 @@ class ResetPassword extends StatelessWidget {
           child: ListView(
             children: [
                CustomTextTitleAuth(
-                text: "Check Email".tr,
+                text: "25".tr,
               ),
               const SizedBox(
                 height: 10,
               ),
               CustomTextBodyAuth(
-                text: "3".tr,
+                text: "26".tr,
               ),
               const SizedBox(
                 height: 45,
@@ -48,8 +49,18 @@ class ResetPassword extends StatelessWidget {
               //   mycontroller:controller.email
               // ),
 
-            
-              CustomButtonAuth(text: "check".tr, onPressed: () {}),
+             CustomTextFormAuth(
+                hinttext: "28".tr, labeltext: "5".tr,
+                icondata: Icons.lock_outlined,
+                mycontroller:controller.password
+              ),
+
+              CustomTextFormAuth(
+                hinttext: "29".tr, labeltext: "5".tr,
+                icondata: Icons.lock_outlined,
+                mycontroller:controller.password
+              ),
+              CustomButtonAuth(text: "27".tr, onPressed: () {}),
               const SizedBox(
                 height: 30,
               ),

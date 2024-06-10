@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/forgetpassword_controller.dart';
+import 'package:k_mandi/controller/auth/verifycode_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
@@ -13,8 +14,8 @@ class VerifyCode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordControllerImp controller =
-        Get.put(ForgetPasswordControllerImp());
+    VerifyCodeControllerImp controller =
+        Get.put(VerifyCodeControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
@@ -45,14 +46,16 @@ class VerifyCode extends StatelessWidget {
                 fieldWidth: 50.0,
                 borderRadius: BorderRadius.circular(20),
                 numberOfFields: 5,
-                borderColor: Color(0xFF512DA8),
+                borderColor: const  Color(0xFF512DA8),
 //set to true to show as box or false to show as dash
                 showFieldAsBox: true,
 //runs when a code is typed in
                 onCodeChanged: (String code) {},
 //handle validation or checks here
 //runs when every textfield is filled
-                onSubmit: (String verificationCode) {},
+                onSubmit: (String verificationCode) {
+                  controller.goToResetPaswword();
+                },
               ),
               
               const SizedBox(
