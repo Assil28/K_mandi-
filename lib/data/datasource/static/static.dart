@@ -1,19 +1,20 @@
+import 'package:get/get.dart';
 import 'package:k_mandi/core/constant/imageassets.dart';
 import 'package:k_mandi/data/datasource/model/onboardingmodel.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-      title: "Choose Product",
+      title: "36".tr,
       body:
-          "We Have a 100k Product , Choose \n Your Product From Our \n E-commerce Shop",
+"37".tr,
       image: AppImageAsset.onboardingImageOne),
   OnBoardingModel(
-      title: "Easy and Safe payment",
-      body: "Easy and Safe payment .....",
+      title: "38".tr,
+      body: "39".tr,
       image: AppImageAsset.onboardingImageTwo),
   OnBoardingModel(
-      title: "Track Your Order",
-      body: "Track Your Order .........",
+      title: "40".tr,
+      body: "41".tr,
       image: AppImageAsset.onboardingImageThree),
   // OnBoardingModel(
   //     title: "Fast Delivery ",

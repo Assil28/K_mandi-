@@ -9,41 +9,49 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
 
   @override
   Widget build(BuildContext context) {
-    return  PageView.builder(
-      controller: controller.pageController,
-      onPageChanged: (val){
-        controller.onPageChanged(val);
-      },
-              itemCount: onBoardingList.length,
-              itemBuilder: (context, i) => Column(
-                    children: [
-                     
-                      Image.asset(
-                        onBoardingList[i].image!,
-                        // width: 300,
-                        // height: 230,
-                        // fit: BoxFit.fill,
-                      ),
-                      const SizedBox(
-                        height: 80,
-                      ),
-                       Text(
-                        onBoardingList[i].title!,
-                        style: Theme.of(context).textTheme.headline1,
-                      ), 
-                        const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        alignment: Alignment.center,
-                        child: Text(
-                          onBoardingList[i].body!,
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
-                      ),
-                    ],
-                  ));
+    return PageView.builder(
+        controller: controller.pageController,
+        onPageChanged: (val) {
+          controller.onPageChanged(val);
+        },
+        itemCount: onBoardingList.length,
+        itemBuilder: (context, i) => Column(
+              children: [
+                Image.asset(
+                  onBoardingList[i].image!,
+                  // width: 300,
+                  height:
+                      Get.width / 1.3, //3oredh lecran howa nafso toul taswira
+                  fit: BoxFit.fill,
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                Text(
+                  onBoardingList[i].title!,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: AppColor.balck),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  width: double.infinity,
+                  alignment: Alignment.center,
+                  child: Text(
+                    onBoardingList[i].body!,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      height: 2,
+                      color: AppColor.grey,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ],
+            ));
   }
 }

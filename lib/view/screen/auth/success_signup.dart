@@ -46,7 +46,7 @@ class SuccessSignUp extends StatelessWidget {
                Container(
                 width: double.infinity,
                  child: CustomButtonAuth(text: "35".tr, onPressed: () {
-                  controller.signup(); 
+                  controller.goToSignIn(); 
                                }),
                ),
 

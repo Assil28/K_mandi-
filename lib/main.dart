@@ -28,28 +28,8 @@ class MyApp extends StatelessWidget {
       locale: controller.language,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: "PlayfairDisplay",
-        textTheme: const TextTheme(
-          headline1: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 24, color: AppColor.balck),
-               headline2: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 26, color: AppColor.balck),
-          bodyText1: TextStyle(
-            height: 2,
-            color: AppColor.grey,
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
-          ),
-           bodyText2: TextStyle(
-            height: 2,
-            color: AppColor.grey,
-            fontSize: 14,
-          ),
-        ),
-        primarySwatch: Colors.blue,
-      ),
-      home: const Login(),
+      theme: controller.appTheme,
+      home: const Language(),
      // home: const Test(),
       routes: routes,
     );

@@ -22,7 +22,7 @@ class SignUp extends StatelessWidget {
           backgroundColor: AppColor.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
-          title: Text("Sign Up",
+          title: Text("11".tr,
               style: Theme.of(context).textTheme.headline1!.copyWith(
                     color: AppColor.grey,
                   )),
