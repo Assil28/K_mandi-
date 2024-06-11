@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/signup_controller.dart';
+import 'package:k_mandi/controller/auth/successsignup_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
@@ -13,7 +14,7 @@ class SuccessSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        SignUpControllerImpl controller= Get.put(SignUpControllerImpl() );
+        SuccessSignUpControllerImp controller= Get.put(SuccessSignUpControllerImp() );
 
     return  Scaffold(
       appBar: AppBar(
@@ -46,7 +47,7 @@ class SuccessSignUp extends StatelessWidget {
                Container(
                 width: double.infinity,
                  child: CustomButtonAuth(text: "35".tr, onPressed: () {
-                  controller.goToSignIn(); 
+                  controller.goToPageLogin(); 
                                }),
                ),
 

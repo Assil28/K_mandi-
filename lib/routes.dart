@@ -8,6 +8,7 @@ import 'package:k_mandi/view/screen/auth/signup.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/success_resetpassword.dart';
 import 'package:k_mandi/view/screen/auth/success_signup.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/verifycode.dart';
+import 'package:k_mandi/view/screen/auth/verifycodesignup.dart';
 
 import 'package:k_mandi/view/screen/onboarding.dart';
 
@@ -17,6 +18,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.signUp: (context) => const SignUp(),
   AppRoutes.forgetPassword: (context) => const ForgetPassword(),
   AppRoutes.verifyCode: (context) => const VerifyCode(),
+  AppRoutes.verifyCodeSignUp: (context) => const VerifyCodeSignUp(),
   AppRoutes.resetPassword: (context) => const ResetPassword(),
   AppRoutes.checkEmail: (context) => const CheckEmail(),
 

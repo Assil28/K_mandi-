@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/signup_controller.dart';
+import 'package:k_mandi/controller/auth/successresetpassword_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
@@ -12,7 +13,7 @@ class SuccessResetPassword extends StatelessWidget {
   const SuccessResetPassword({super.key}); 
   @override
   Widget build(BuildContext context) {
-        SignUpControllerImpl controller= Get.put(SignUpControllerImpl() );
+        SuccessResetPasswordControllerImp controller= Get.put(SuccessResetPasswordControllerImp() );
 
     return  Scaffold(
       appBar: AppBar(
@@ -45,7 +46,7 @@ class SuccessResetPassword extends StatelessWidget {
                Container(
                 width: double.infinity,
                  child: CustomButtonAuth(text: "35".tr, onPressed: () {
-                  controller.signup(); 
+                  controller.goToPageLogin(); 
                                }),
                ),
 
