@@ -44,6 +44,9 @@ class CheckEmail extends StatelessWidget {
               
 
               CustomTextFormAuth(
+                valid: (val){
+                  
+                },
                 hinttext: "6".tr, labeltext: "4".tr,
                 icondata: Icons.email_outlined,
                 mycontroller:controller.email

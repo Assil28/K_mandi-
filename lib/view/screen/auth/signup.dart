@@ -44,23 +44,35 @@ class SignUp extends StatelessWidget {
                 height: 45,
               ),
               CustomTextFormAuth(
+                valid: (val){
+                  
+                },
                 hinttext: "13".tr, labeltext: "12".tr,
                 icondata: Icons.person_outlined,
                 mycontroller:controller.username
               ),
 
               CustomTextFormAuth(
+                valid: (val){
+                  
+                },
                 hinttext: "6".tr, labeltext: "4".tr,
                 icondata: Icons.email_outlined,
                 mycontroller:controller.email
               ),
 
               CustomTextFormAuth(
+                valid: (val){
+                  
+                },
                 hinttext: "15".tr, labeltext: "14".tr,
                 icondata: Icons.phone_outlined,
                 mycontroller:controller.phone
               ),
               CustomTextFormAuth(
+                valid: (val){
+                  
+                },
                 hinttext: "7".tr, labeltext: "5".tr,
                 icondata: Icons.lock_outlined,
                 mycontroller:controller.password
