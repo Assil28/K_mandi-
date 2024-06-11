@@ -8,9 +8,8 @@ import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
 import 'package:k_mandi/view/widget/auth/customtexttitleauth.dart';
 
-class SuccessSignUp extends StatelessWidget {
-  const SuccessSignUp({super.key});
-
+class SuccessResetPassword extends StatelessWidget {
+  const SuccessResetPassword({super.key}); 
   @override
   Widget build(BuildContext context) {
         SignUpControllerImpl controller= Get.put(SignUpControllerImpl() );
@@ -40,7 +39,7 @@ class SuccessSignUp extends StatelessWidget {
                 height: 10,
               ),
               CustomTextBodyAuth(
-                text: "33".tr,
+                text: "33 ".tr,
               ),
                const  Spacer(),
                Container(

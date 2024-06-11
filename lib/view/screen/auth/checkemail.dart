@@ -1,26 +1,26 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:k_mandi/controller/auth/forgetpassword_controller.dart';
-import 'package:k_mandi/controller/auth/resetpassword_controller.dart';
+import 'package:k_mandi/controller/auth/checkemail_controller.dart';
+
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextformauth.dart';
 import 'package:k_mandi/view/widget/auth/customtexttitleauth.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+class CheckEmail extends StatelessWidget {
+  const CheckEmail ({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-    ResetPasswordControllerImp controller= Get.put(ResetPasswordControllerImp());
+    CheckEmailControllerImp controller= Get.put(CheckEmailControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
-          title: Text("24".tr,
+          title: Text("18".tr,
               style: Theme.of(context).textTheme.headline1!.copyWith(
                     color: AppColor.grey,
                   )),
@@ -30,37 +30,29 @@ class ResetPassword extends StatelessWidget {
           child: ListView(
             children: [
                CustomTextTitleAuth(
-                text: "25".tr,
+                text: "31".tr,
               ),
               const SizedBox(
                 height: 10,
               ),
               CustomTextBodyAuth(
-                text: "26".tr,
+                text: "22".tr,
               ),
               const SizedBox(
-                height: 45,
+                height: 15,
               ),
               
 
-              // CustomTextFormAuth(
-              //   hinttext: "6".tr, labeltext: "4".tr,
-              //   icondata: Icons.email_outlined,
-              //   mycontroller:controller.email
-              // ),
-
-             CustomTextFormAuth(
-                hinttext: "28".tr, labeltext: "5".tr,
-                icondata: Icons.lock_outlined,
-                mycontroller:controller.password
-              ),
-
               CustomTextFormAuth(
-                hinttext: "29".tr, labeltext: "5".tr,
-                icondata: Icons.lock_outlined,
-                mycontroller:controller.password
+                hinttext: "6".tr, labeltext: "4".tr,
+                icondata: Icons.email_outlined,
+                mycontroller:controller.email
               ),
-              CustomButtonAuth(text: "27".tr, onPressed: () {}),
+
+            
+              CustomButtonAuth(text: "19".tr, onPressed: () {
+                controller.goToSuccessSignUp();
+              }),
               const SizedBox(
                 height: 30,
               ),

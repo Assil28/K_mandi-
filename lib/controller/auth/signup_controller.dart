@@ -15,7 +15,7 @@ late TextEditingController phone;
 
   @override
   signup() {
-   
+    Get.offNamed(AppRoutes.checkEmail);
   }
 
   
