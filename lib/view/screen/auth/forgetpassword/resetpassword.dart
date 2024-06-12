@@ -1,8 +1,9 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/forgetpassword_controller.dart';
 import 'package:k_mandi/controller/auth/resetpassword_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/functions/validinput.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextformauth.dart';
@@ -13,8 +14,8 @@ class ResetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    ResetPasswordControllerImp controller= Get.put(ResetPasswordControllerImp());
+    ResetPasswordControllerImp controller =
+        Get.put(ResetPasswordControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
@@ -29,7 +30,7 @@ class ResetPassword extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: ListView(
             children: [
-               CustomTextTitleAuth(
+              CustomTextTitleAuth(
                 text: "25".tr,
               ),
               const SizedBox(
@@ -41,7 +42,6 @@ class ResetPassword extends StatelessWidget {
               const SizedBox(
                 height: 45,
               ),
-              
 
               // CustomTextFormAuth(
               //   hinttext: "6".tr, labeltext: "4".tr,
@@ -49,31 +49,31 @@ class ResetPassword extends StatelessWidget {
               //   mycontroller:controller.email
               // ),
 
-             CustomTextFormAuth(
-              valid: (val){
-                  
-                },
-                hinttext: "28".tr, labeltext: "5".tr,
-                icondata: Icons.lock_outlined,
-                mycontroller:controller.password
-              ),
+              CustomTextFormAuth(
+                  valid: (val) {
+                    return validInput(val!, 5, 30, "password");
+                  },
+                  hinttext: "28".tr,
+                  labeltext: "5".tr,
+                  icondata: Icons.lock_outlined,
+                  mycontroller: controller.password),
 
               CustomTextFormAuth(
-                valid: (val){
-                  
-                },
-                hinttext: "29".tr, labeltext: "5".tr,
-                icondata: Icons.lock_outlined,
-                mycontroller:controller.password
-              ),
-              CustomButtonAuth(text: "27".tr, onPressed: () {
-                controller.goToSuccessResetPassword();
-              }),
+                  valid: (val) {
+                    return validInput(val!, 5, 30, "password");
+                  },
+                  hinttext: "29".tr,
+                  labeltext: "5".tr,
+                  icondata: Icons.lock_outlined,
+                  mycontroller: controller.password),
+              CustomButtonAuth(
+                  text: "27".tr,
+                  onPressed: () {
+                    controller.goToSuccessResetPassword();
+                  }),
               const SizedBox(
                 height: 30,
               ),
-             
-              
             ],
           ),
         ));

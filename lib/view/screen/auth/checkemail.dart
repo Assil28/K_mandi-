@@ -3,18 +3,18 @@ import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/checkemail_controller.dart';
 
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/functions/validinput.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextformauth.dart';
 import 'package:k_mandi/view/widget/auth/customtexttitleauth.dart';
 
 class CheckEmail extends StatelessWidget {
-  const CheckEmail ({super.key});
+  const CheckEmail({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    CheckEmailControllerImp controller= Get.put(CheckEmailControllerImp());
+    CheckEmailControllerImp controller = Get.put(CheckEmailControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
@@ -29,7 +29,7 @@ class CheckEmail extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: ListView(
             children: [
-               CustomTextTitleAuth(
+              CustomTextTitleAuth(
                 text: "31".tr,
               ),
               const SizedBox(
@@ -41,26 +41,22 @@ class CheckEmail extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              
-
               CustomTextFormAuth(
-                valid: (val){
-                  
-                },
-                hinttext: "6".tr, labeltext: "4".tr,
-                icondata: Icons.email_outlined,
-                mycontroller:controller.email
-              ),
-
-            
-              CustomButtonAuth(text: "19".tr, onPressed: () {
-                controller.goToVerifyCodeSignUp();
-              }),
+                  valid: (val) {
+                    return validInput(val!, 5, 100, "email");
+                  },
+                  hinttext: "6".tr,
+                  labeltext: "4".tr,
+                  icondata: Icons.email_outlined,
+                  mycontroller: controller.email),
+              CustomButtonAuth(
+                  text: "19".tr,
+                  onPressed: () {
+                    controller.goToVerifyCodeSignUp();
+                  }),
               const SizedBox(
                 height: 30,
               ),
-             
-              
             ],
           ),
         ));

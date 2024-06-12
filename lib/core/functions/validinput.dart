@@ -3,31 +3,31 @@ import 'package:get/get_utils/get_utils.dart';
 validInput(String val, int min, int max, String type) {
   if (type == "username") {
     if (!GetUtils.isUsername(val)) {
-      return "not valid username";
+      return "43".tr;
     }
   }
 
   if (type == "email") {
     if (!GetUtils.isEmail(val)) {
-      return "not valid email";
+      return "44".tr;
     }
   }
 
   if (type == "phone") {
     if (!GetUtils.isPhoneNumber(val)) {
-      return "not valid phone number";
+      return "45".tr;
     }
   }
 
   if (val.isEmpty) {
-    return "can't be Empty";
+    return "46".tr;
   }
 
   if (val.length < min) {
-    return "can't be less than $min";
+    return "${"47".tr} $min";
   }
 
   if (val.length > max) {
-    return "can't be more than $max";
+    return "${"48".tr} $max";
   }
 }
