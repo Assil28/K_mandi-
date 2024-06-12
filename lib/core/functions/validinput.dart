@@ -1,6 +1,10 @@
 import 'package:get/get_utils/get_utils.dart';
 
 validInput(String val, int min, int max, String type) {
+ if (val.isEmpty) {
+    return "46".tr;
+  }
+
   if (type == "username") {
     if (!GetUtils.isUsername(val)) {
       return "43".tr;
@@ -19,9 +23,7 @@ validInput(String val, int min, int max, String type) {
     }
   }
 
-  if (val.isEmpty) {
-    return "46".tr;
-  }
+ 
 
   if (val.length < min) {
     return "${"47".tr} $min";

@@ -18,6 +18,7 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
      var formdata = formstate.currentState;
     if(formdata!.validate()){
         print("valid");
+        goToVerifyCode();
     }else{
       print("not valid");
     }

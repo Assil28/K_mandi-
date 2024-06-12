@@ -25,7 +25,7 @@ GlobalKey <FormState> formstate = GlobalKey<FormState>();
   }
 
   @override
-  goToSignUp() {
+   goToSignUp() {
     Get.offNamed(AppRoutes.signUp);
   }
 

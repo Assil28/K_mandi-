@@ -29,7 +29,7 @@ class Login extends StatelessWidget {
         body: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           child: Form(
-            key:  controller.formstate,
+            key: controller.formstate,
             child: ListView(
               children: [
                 const LogoAuth(),
@@ -46,6 +46,7 @@ class Login extends StatelessWidget {
                   height: 45,
                 ),
                 CustomTextFormAuth(
+                  isNumber: false,
                   valid: (val) {
                     return validInput(val!, 5, 100, "email");
                   },
@@ -55,6 +56,7 @@ class Login extends StatelessWidget {
                   mycontroller: controller.email,
                 ),
                 CustomTextFormAuth(
+                    isNumber: false,
                     valid: (val) {
                       return validInput(val!, 5, 30, "password");
                     },
@@ -71,9 +73,11 @@ class Login extends StatelessWidget {
                     textAlign: TextAlign.end,
                   ),
                 ),
-                CustomButtonAuth(text: "9".tr, onPressed: () {
-                  controller.login();
-                }),
+                CustomButtonAuth(
+                    text: "9".tr,
+                    onPressed: () {
+                      controller.login();
+                    }),
                 const SizedBox(
                   height: 30,
                 ),
