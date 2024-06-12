@@ -9,7 +9,7 @@ abstract class SignUpController extends GetxController {
 
 class SignUpControllerImpl extends SignUpController {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
-
+ 
   late TextEditingController username;
   late TextEditingController email;
   late TextEditingController phone;
@@ -20,7 +20,7 @@ class SignUpControllerImpl extends SignUpController {
     var formdata = formstate.currentState;
     if (formdata!.validate()) {
       print("valid");
-      Get.offNamed(AppRoutes.checkEmail);
+      Get.offNamed(AppRoutes.verifyCodeSignUp);
     } else {
       print("not valid");
     }

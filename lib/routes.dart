@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:k_mandi/core/constant/routes.dart';
-import 'package:k_mandi/view/screen/auth/checkemail.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/fogetpassword.dart';
 import 'package:k_mandi/view/screen/auth/login.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/resetpassword.dart';
@@ -20,7 +19,6 @@ Map<String, Widget Function(BuildContext)> routes = {
   AppRoutes.verifyCode: (context) => const VerifyCode(),
   AppRoutes.verifyCodeSignUp: (context) => const VerifyCodeSignUp(),
   AppRoutes.resetPassword: (context) => const ResetPassword(),
-  AppRoutes.checkEmail: (context) => const CheckEmail(),
 
   AppRoutes.successSignUp: (context) => const SuccessSignUp(),
   AppRoutes.successResetPassword: (context) => const SuccessResetPassword(),
