@@ -27,37 +27,40 @@ class CheckEmail extends StatelessWidget {
         ),
         body: Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-          child: ListView(
-            children: [
-              CustomTextTitleAuth(
-                text: "31".tr,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              CustomTextBodyAuth(
-                text: "22".tr,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              CustomTextFormAuth(
-                  valid: (val) {
-                    return validInput(val!, 5, 100, "email");
-                  },
-                  hinttext: "6".tr,
-                  labeltext: "4".tr,
-                  icondata: Icons.email_outlined,
-                  mycontroller: controller.email),
-              CustomButtonAuth(
-                  text: "19".tr,
-                  onPressed: () {
-                    controller.goToVerifyCodeSignUp();
-                  }),
-              const SizedBox(
-                height: 30,
-              ),
-            ],
+          child: Form(
+            key: controller.formstate,
+            child: ListView(
+              children: [
+                CustomTextTitleAuth(
+                  text: "31".tr,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                CustomTextBodyAuth(
+                  text: "22".tr,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                CustomTextFormAuth(
+                    valid: (val) {
+                      return validInput(val!, 5, 100, "email");
+                    },
+                    hinttext: "6".tr,
+                    labeltext: "4".tr,
+                    icondata: Icons.email_outlined,
+                    mycontroller: controller.email),
+                CustomButtonAuth(
+                    text: "19".tr,
+                    onPressed: () {
+                      controller.goToVerifyCodeSignUp();
+                    }),
+                const SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
           ),
         ));
   }
