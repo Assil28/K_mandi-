@@ -78,16 +78,21 @@ class SignUp extends StatelessWidget {
                         labeltext: "14".tr,
                         icondata: Icons.phone_outlined,
                         mycontroller: controller.phone),
-                    CustomTextFormAuth(
-                      obscureText: true,
-                        isNumber: false,
-                        valid: (val) {
-                          return validInput(val!, 5, 30, "password");
-                        },
-                        hinttext: "7".tr,
-                        labeltext: "5".tr,
-                        icondata: Icons.lock_outlined,
-                        mycontroller: controller.password),
+                    GetBuilder<SignUpControllerImpl>(
+                      builder: (controller) => CustomTextFormAuth(
+                          obscureText: controller.isShowPassword,
+                          onTapIcon: () {
+                            controller.showPassword();
+                          },
+                          isNumber: false,
+                          valid: (val) {
+                            return validInput(val!, 5, 30, "password");
+                          },
+                          hinttext: "7".tr,
+                          labeltext: "5".tr,
+                          icondata: Icons.lock_outlined,
+                          mycontroller: controller.password),
+                    ),
                     // Text(
                     //   "8".tr,
                     //   textAlign: TextAlign.end,

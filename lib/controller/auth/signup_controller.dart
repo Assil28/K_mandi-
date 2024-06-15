@@ -15,6 +15,13 @@ class SignUpControllerImpl extends SignUpController {
   late TextEditingController phone;
   late TextEditingController password;
 
+    bool isShowPassword = true;
+
+    showPassword(){
+    isShowPassword = isShowPassword == true ? false : true;
+    update();
+  }
+
   @override
   signup() {
     var formdata = formstate.currentState;
@@ -25,6 +32,8 @@ class SignUpControllerImpl extends SignUpController {
       print("not valid");
     }
   }
+
+
 
   @override
   goToSignIn() {
