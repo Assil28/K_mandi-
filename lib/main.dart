@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/localization/changelocal.dart';
 import 'package:k_mandi/core/localization/translation.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/routes.dart';
-import 'package:k_mandi/test.dart';
-import 'package:k_mandi/view/screen/auth/login.dart';
+
 import 'package:k_mandi/view/screen/language.dart';
 
 void main() async {
