@@ -79,6 +79,7 @@ class SignUp extends StatelessWidget {
                         icondata: Icons.phone_outlined,
                         mycontroller: controller.phone),
                     CustomTextFormAuth(
+                      obscureText: true,
                         isNumber: false,
                         valid: (val) {
                           return validInput(val!, 5, 30, "password");

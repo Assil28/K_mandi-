@@ -14,6 +14,8 @@ GlobalKey <FormState> formstate = GlobalKey<FormState>();
   late TextEditingController email;
   late TextEditingController password;
 
+  bool isShowPassword = true;
+
   @override
   login() {
     var formdata = formstate.currentState;
@@ -22,6 +24,11 @@ GlobalKey <FormState> formstate = GlobalKey<FormState>();
     }else{
       print("not valid");
     }
+  }
+
+  showPassword(){
+    isShowPassword = isShowPassword == true ? false : true;
+    update();
   }
 
   @override
