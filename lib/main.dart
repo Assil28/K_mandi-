@@ -20,16 +20,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-   LocaleController controller = Get.put(LocaleController());
+    LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
       translations: MyTranslation(),
       locale: controller.language,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: controller.appTheme,
-      home: const Language(),
-     // home: const Test(),
-      routes: routes,
+
+      //pour tester les widget a utiliser
+      // home: const Test(),
+
+      //home: const Language(),
+      // medem nesta3mel fl middleWare
+      // nemchi f routes.dart nzid l middle ware lel page par default l nhebo yabde biha
+
+      //routes: routes,
+      // medem ne5dem bel getx bch nesta3mrl route ta3 l getx
+      getPages: routes,
     );
   }
 }
