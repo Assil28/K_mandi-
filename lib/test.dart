@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:k_mandi/core/functions/checkinternet.dart';
 
 class Test extends StatefulWidget {
   const Test({super.key});
@@ -9,6 +10,7 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
