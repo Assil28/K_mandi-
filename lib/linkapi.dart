@@ -6,5 +6,6 @@ class LinkApi {
 
     // Auth Links
     static const String signUp = "$serveur/auth/signup.php";
+     static const String verifycodeSignUp = "$serveur/auth/signup.php";
 
 }

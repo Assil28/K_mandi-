@@ -20,7 +20,7 @@ class SignUpControllerImpl extends SignUpController {
 
   bool isShowPassword = true;
 
-  late StatusRequest statusRequest;
+  StatusRequest? statusRequest;
   List data = [];
   SignUpData signUpData = SignUpData(Get.find());
 
@@ -36,20 +36,18 @@ class SignUpControllerImpl extends SignUpController {
       print("valid");
 
       statusRequest = StatusRequest.loading;
+      update();
       var response = await signUpData.postdata(
           username.text, password.text, email.text, phone.text);
       statusRequest = handlingData(response);
       if (statusRequest == StatusRequest.success) {
         if (response['status'] == " success") {
-
           // se deriger vers verifycode
-          Get.offNamed(AppRoutes.verifyCodeSignUp);
+          Get.offNamed(AppRoutes.verifyCodeSignUp, arguments: {"email": email.text});
           //ken jit ne5dem flutter 3adi lezemni nzid G et.delet<SignUpControllerImpl>(); bch yna7iha mel memoire k nemchi l route e5or
           // medem ne5dem bel GetX w fl main 3malet getPages f 3oudh l route directement w sta3melet list f 3oudh l map
         } else {
-          Get.defaultDialog(
-              title: "53".tr,
-              middleText: "54".tr);
+          Get.defaultDialog(title: "53".tr, middleText: "54".tr);
           statusRequest = StatusRequest.failure;
         }
       }

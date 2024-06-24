@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart';
 import 'package:k_mandi/controller/auth/signup_controller.dart';
+import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/functions/alertexitapp.dart';
 import 'package:k_mandi/core/functions/validinput.dart';
@@ -21,19 +21,25 @@ class SignUp extends StatelessWidget {
     // k nesta3mel l lazyput lezem nhot l container l fiha l Form f west GetBuilder
     Get.lazyPut(() => SignUpControllerImpl());
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: AppColor.backgroundColor,
-          elevation: 0.0,
-          centerTitle: true,
-          title: Text("11".tr,
-              style: Theme.of(context).textTheme.headline1!.copyWith(
-                    color: AppColor.grey,
-                  )),
-        ),
-        body: WillPopScope(
+      appBar: AppBar(
+        backgroundColor: AppColor.backgroundColor,
+        elevation: 0.0,
+        centerTitle: true,
+        title: Text("11".tr,
+            style: Theme.of(context).textTheme.headline1!.copyWith(
+                  color: AppColor.grey,
+                )),
+      ),
+      body: WillPopScope(
           onWillPop: alertExitApp,
           child: GetBuilder<SignUpControllerImpl>(
-            builder: (controller) => Container(
+            builder: (controller) =>
+            
+            controller.statusRequest == StatusRequest.loading ?
+
+          Center(child: Text("Loading"),)
+
+            : Container(
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
               child: Form(
                 key: controller.formstate,
@@ -116,7 +122,7 @@ class SignUp extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ));
+          )),
+    );
   }
 }
