@@ -3,4 +3,8 @@ class LinkApi {
 
     static const String test = "$serveur/test.php";
 
+
+    // Auth Links
+    static const String signUp = "$serveur/auth/signup.php";
+
 }
