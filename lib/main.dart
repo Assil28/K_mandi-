@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:k_mandi/bindings/initialbindings.dart';
 import 'package:k_mandi/core/localization/changelocal.dart';
 import 'package:k_mandi/core/localization/translation.dart';
 import 'package:k_mandi/core/services/services.dart';
@@ -27,6 +28,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: controller.appTheme,
+      // pour assurer linjection de crud 
+      initialBinding: InitialBindings(),
 
       //pour tester les widget a utiliser
       // home: const Test(),

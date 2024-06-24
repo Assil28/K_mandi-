@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/core/middleware/mymiddleware.dart';
+import 'package:k_mandi/test.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/fogetpassword.dart';
 import 'package:k_mandi/view/screen/auth/login.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/resetpassword.dart';
@@ -19,12 +20,14 @@ List<GetPage<dynamic>>? routes = [
   // l app par defaut tabda m Language nhot fiha l middleware l 3malto
   GetPage(
       name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
+  //  GetPage(
+  //     name: "/", page: () => const Test(),),
 
 //Auth
   GetPage(name: AppRoutes.login, page: () => const Login()),
   GetPage(name: AppRoutes.signUp, page: () => const SignUp()),
   GetPage(name: AppRoutes.forgetPassword, page: () => const ForgetPassword()),
-  GetPage(name: AppRoutes.verifyCode, page: () => const VerifyCode()),
+  GetPage(name: AppRoutes.verifyCode, page: () => const VerifyCode()), 
   GetPage(
       name: AppRoutes.verifyCodeSignUp, page: () => const VerifyCodeSignUp()),
   GetPage(name: AppRoutes.resetPassword, page: () => const ResetPassword()),
