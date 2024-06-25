@@ -28,7 +28,7 @@ class VerifyCodeSignUp extends StatelessWidget {
           builder: (controller) => controller.statusRequest ==
                   StatusRequest.loading
               ? const Center(
-                  child: Text("Loading .."),
+                  child:  Text("Loading .."),
                 )
               : Container(
                   padding:
@@ -59,7 +59,7 @@ class VerifyCodeSignUp extends StatelessWidget {
 //handle validation or checks here
 //runs when every textfield is filled
                         onSubmit: (String verificationCode) {
-                          controller.goToSuccessSignUp();
+                          controller.goToSuccessSignUp(verificationCode);
                         },
                       ),
                       const SizedBox(

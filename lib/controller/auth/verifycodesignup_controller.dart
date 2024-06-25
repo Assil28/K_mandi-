@@ -6,13 +6,12 @@ import 'package:k_mandi/data/datasource/remote/auth/verifycodesignup.dart';
 
 abstract class VerifyCodeSignUpController extends GetxController {
   checkCode();
-  goToSuccessSignUp();
+  goToSuccessSignUp(String verifycodesignup);
 }
 
 class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   VerifyCodeSignUpData verifyCodeSignUpData = VerifyCodeSignUpData(Get.find());
 
-  late String verifyCode;
 
   String? email;
 
@@ -22,17 +21,17 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   checkCode() {}
 
   @override
-  goToSuccessSignUp() async {
+  goToSuccessSignUp(String verifycodesignup ) async {
     statusRequest = StatusRequest.loading;
-    update();
-    var response = await verifyCodeSignUpData.postdata(email!, verifyCode!);
+    update();  
+    var response = await verifyCodeSignUpData.postdata(email!, verifycodesignup);
     statusRequest = handlingData(response);
     if (statusRequest == StatusRequest.success) {
       if (response['status'] == " success") {
-        // se deriger vers successSignUp
+        // se deriger vers successSignUp 
         Get.offNamed(AppRoutes.successSignUp);
       } else {
-        Get.defaultDialog(title: "53".tr, middleText: "54".tr);
+        Get.defaultDialog(title: "53".tr, middleText: "54".tr);   
         statusRequest = StatusRequest.failure;
       }
     }
