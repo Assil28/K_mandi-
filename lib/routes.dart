@@ -11,6 +11,7 @@ import 'package:k_mandi/view/screen/auth/forgetpassword/success_resetpassword.da
 import 'package:k_mandi/view/screen/auth/success_signup.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:k_mandi/view/screen/auth/verifycodesignup.dart';
+import 'package:k_mandi/view/screen/home.dart';
 import 'package:k_mandi/view/screen/language.dart';
 
 import 'package:k_mandi/view/screen/onboarding.dart';
@@ -38,7 +39,20 @@ List<GetPage<dynamic>>? routes = [
 
   //OnBoarding
   GetPage(name: AppRoutes.onBoarding, page: () => const OnBoarding()),
+
+  // Home
+    GetPage(name: AppRoutes.homePage, page: () => const HomePage()),
+
 ];
+
+
+
+
+
+
+
+
+
 
 // nesta3mel l map k ne5dem 3adi mch bel getx
 // Map<String, Widget Function(BuildContext)> routes = {

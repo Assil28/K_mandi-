@@ -31,7 +31,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
         // se deriger vers successSignUp 
         Get.offNamed(AppRoutes.successSignUp);
       } else {
-        Get.defaultDialog(title: "53".tr, middleText: "54".tr);   
+        Get.defaultDialog(title: "53".tr, middleText: "55".tr);   
         statusRequest = StatusRequest.failure;
       }
     }
