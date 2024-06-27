@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import 'package:k_mandi/controller/auth/forgetpassword_controller.dart';
-import 'package:k_mandi/controller/auth/verifycode_controller.dart';
+import 'package:k_mandi/controller/forgetpassword/verifycode_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
-import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
-import 'package:k_mandi/view/widget/auth/customtextformauth.dart';
 import 'package:k_mandi/view/widget/auth/customtexttitleauth.dart';
 
 class VerifyCode extends StatelessWidget {
@@ -54,7 +51,7 @@ class VerifyCode extends StatelessWidget {
 //handle validation or checks here
 //runs when every textfield is filled
                 onSubmit: (String verificationCode) {
-                  controller.goToResetPaswword();
+                  controller.goToResetPaswword(verificationCode);
                 },
               ),
               

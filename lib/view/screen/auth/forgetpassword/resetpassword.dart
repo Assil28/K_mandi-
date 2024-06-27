@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:k_mandi/controller/auth/forgetpassword_controller.dart';
-import 'package:k_mandi/controller/auth/resetpassword_controller.dart';
+import 'package:k_mandi/controller/forgetpassword/forgetpassword_controller.dart';
+import 'package:k_mandi/controller/forgetpassword/resetpassword_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/functions/validinput.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
