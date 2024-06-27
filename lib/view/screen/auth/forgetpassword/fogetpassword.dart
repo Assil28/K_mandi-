@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:k_mandi/controller/forgetpassword/forgetpassword_controller.dart';
 import 'package:k_mandi/controller/auth/signup_controller.dart';
+import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/functions/validinput.dart';
 import 'package:k_mandi/view/widget/auth/custombuttonauth.dart';
@@ -17,8 +18,7 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordControllerImp controller =
-        Get.put(ForgetPasswordControllerImp());
+    Get.put(ForgetPasswordControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
@@ -29,44 +29,51 @@ class ForgetPassword extends StatelessWidget {
                     color: AppColor.grey,
                   )),
         ),
-        body: Container(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-          child: Form(
-            key: controller.formstate,
-            child: ListView(
-              children: [
-                CustomTextTitleAuth(
-                  text: "18".tr,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                CustomTextBodyAuth(
-                  text: "22".tr,
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                CustomTextFormAuth(
-                  isNumber: false,
-                    valid: (val) {
-                      return validInput(val!, 5, 100, "email");
-                    },
-                    hinttext: "6".tr,
-                    labeltext: "4".tr,
-                    icondata: Icons.email_outlined,
-                    mycontroller: controller.email),
-                CustomButtonAuth(
-                    text: "19".tr,
-                    onPressed: () {
-                      controller.checkEmail();
-                    }),
-                const SizedBox(
-                  height: 30,
-                ),
-              ],
-            ),
-          ),
-        ));
+        body: GetBuilder<ForgetPasswordControllerImp>(
+            builder: (controller) =>
+                controller.statusRequest == StatusRequest.loading
+                    ?  Center(
+                        child: Text("60".tr),
+                      )
+                    : Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 30),
+                        child: Form(
+                          key: controller.formstate,
+                          child: ListView(
+                            children: [
+                              CustomTextTitleAuth(
+                                text: "18".tr,
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              CustomTextBodyAuth(
+                                text: "22".tr,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              CustomTextFormAuth(
+                                  isNumber: false,
+                                  valid: (val) {
+                                    return validInput(val!, 5, 100, "email");
+                                  },
+                                  hinttext: "6".tr,
+                                  labeltext: "4".tr,
+                                  icondata: Icons.email_outlined,
+                                  mycontroller: controller.email),
+                              CustomButtonAuth(
+                                  text: "19".tr,
+                                  onPressed: () {
+                                    controller.checkEmail();
+                                  }),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                            ],
+                          ),
+                        ),
+                      )));
   }
 }
