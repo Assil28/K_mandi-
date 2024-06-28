@@ -20,7 +20,7 @@ class SignUpControllerImpl extends SignUpController {
 
   bool isShowPassword = true;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest=StatusRequest.none;
   List data = [];
   SignUpData signUpData = SignUpData(Get.find());
 

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:k_mandi/controller/forgetpassword/forgetpassword_controller.dart';
 import 'package:k_mandi/controller/auth/signup_controller.dart';
+import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/functions/validinput.dart';
@@ -31,11 +32,7 @@ class ForgetPassword extends StatelessWidget {
         ),
         body: GetBuilder<ForgetPasswordControllerImp>(
             builder: (controller) =>
-                controller.statusRequest == StatusRequest.loading
-                    ?  Center(
-                        child: Text("60".tr),
-                      )
-                    : Container(
+                HandlingDataRequest(statusRequest: controller.statusRequest, widget: Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 15, horizontal: 30),
                         child: Form(
@@ -74,6 +71,6 @@ class ForgetPassword extends StatelessWidget {
                             ],
                           ),
                         ),
-                      )));
+                      ))));
   }
 }

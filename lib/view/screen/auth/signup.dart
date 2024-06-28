@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/signup_controller.dart';
+import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/functions/alertexitapp.dart';
@@ -35,11 +36,7 @@ class SignUp extends StatelessWidget {
           child: GetBuilder<SignUpControllerImpl>(
             builder: (controller) =>
             
-            controller.statusRequest == StatusRequest.loading ?
-
-          Center(child: Text("Loading"),)
-
-            : Container(
+           HandlingDataRequest(statusRequest: controller.statusRequest, widget: Container(
               padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
               child: Form(
                 key: controller.formstate,
@@ -121,7 +118,7 @@ class SignUp extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
+            )),
           )),
     );
   }

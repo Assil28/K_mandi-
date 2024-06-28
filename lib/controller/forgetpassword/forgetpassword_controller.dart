@@ -16,7 +16,7 @@ CheckEmailData checkEmailData = CheckEmailData(Get.find());
 
   late TextEditingController email;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   checkEmail()async {

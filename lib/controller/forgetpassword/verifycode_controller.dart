@@ -15,7 +15,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
 
   String? email;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   checkCode() {}

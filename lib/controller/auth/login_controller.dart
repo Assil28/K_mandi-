@@ -23,7 +23,7 @@ class LoginControllerImp extends LoginController {
 
   bool isShowPassword = true;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   login() async {

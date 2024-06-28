@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
+import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 
 import 'package:k_mandi/core/constant/color.dart';
@@ -25,49 +26,46 @@ class VerifyCodeSignUp extends StatelessWidget {
                   )),
         ),
         body: GetBuilder<VerifyCodeSignUpControllerImp>(
-          builder: (controller) => controller.statusRequest ==
-                  StatusRequest.loading
-              ? const Center(
-                  child:  Text("Loading .."),
-                )
-              : Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                  child: ListView(
-                    children: [
-                      CustomTextTitleAuth(
-                        text: "20".tr,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      CustomTextBodyAuth(
-                        text: "23".tr,
-                      ),
-                      const SizedBox(
-                        height: 45,
-                      ),
-                      OtpTextField(
-                        fieldWidth: 50.0,
-                        borderRadius: BorderRadius.circular(20),
-                        numberOfFields: 5,
-                        borderColor: const Color(0xFF512DA8),
+          builder: (controller) => HandlingDataRequest(
+              statusRequest: controller.statusRequest,
+              widget: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                child: ListView(
+                  children: [
+                    CustomTextTitleAuth(
+                      text: "20".tr,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    CustomTextBodyAuth(
+                      text: "23".tr,
+                    ),
+                    const SizedBox(
+                      height: 45,
+                    ),
+                    OtpTextField(
+                      fieldWidth: 50.0,
+                      borderRadius: BorderRadius.circular(20),
+                      numberOfFields: 5,
+                      borderColor: const Color(0xFF512DA8),
 //set to true to show as box or false to show as dash
-                        showFieldAsBox: true,
+                      showFieldAsBox: true,
 //runs when a code is typed in
-                        onCodeChanged: (String code) {},
+                      onCodeChanged: (String code) {},
 //handle validation or checks here
 //runs when every textfield is filled
-                        onSubmit: (String verificationCode) {
-                          controller.goToSuccessSignUp(verificationCode);
-                        },
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                    ],
-                  ),
+                      onSubmit: (String verificationCode) {
+                        controller.goToSuccessSignUp(verificationCode);
+                      },
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                  ],
                 ),
+              )),
         ));
   }
 }
