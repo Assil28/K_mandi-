@@ -1,5 +1,5 @@
 class LinkApi {
-  static const String serveur = "http://localhost:4200/ecommerce";
+  static const String serveur = "http://localhost/ecommerce_Kmandi";
 
   static const String test = "$serveur/test.php";
 
@@ -15,3 +15,4 @@ class LinkApi {
   static const String verifyCodeForgetPassword   = "$serveur/forgetpassword/verifycode.php";
   static const String resetPassword = "$serveur/forgetpassword/resetpassword.php";
 }
+
