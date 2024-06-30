@@ -16,7 +16,7 @@ class Language extends GetView<LocaleController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("1".tr, style: Theme.of(context).textTheme.headline1),
+            Text("1".tr, style: Theme.of(context).textTheme.headlineLarge),
             const SizedBox(
               height: 20,
             ),

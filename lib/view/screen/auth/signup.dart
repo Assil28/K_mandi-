@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/auth/signup_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
-import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/functions/alertexitapp.dart';
 import 'package:k_mandi/core/functions/validinput.dart';
@@ -27,7 +26,7 @@ class SignUp extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         title: Text("11".tr,
-            style: Theme.of(context).textTheme.headline1!.copyWith(
+            style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   color: AppColor.grey,
                 )),
       ),

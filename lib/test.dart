@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/test_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/constant/color.dart';
-import 'package:k_mandi/core/functions/checkinternet.dart';
 
 class Test extends StatefulWidget {
   const Test({super.key});

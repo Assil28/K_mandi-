@@ -19,7 +19,7 @@ class VerifyCode extends StatelessWidget {
           elevation: 0.0,
           centerTitle: true,
           title: Text("21".tr,
-              style: Theme.of(context).textTheme.headline1!.copyWith(
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                     color: AppColor.grey,
                   )),
         ),

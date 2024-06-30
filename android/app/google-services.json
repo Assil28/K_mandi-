@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "225166301435",
+    "project_id": "ecommerce-b2678",
+    "storage_bucket": "ecommerce-b2678.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:225166301435:android:fcc65f159ee60f5a7cb85e",
+        "android_client_info": {
+          "package_name": "com.example.k_mandi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdofQdLM0aZ4yyEnM09yhD_ATjlzQ1YhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

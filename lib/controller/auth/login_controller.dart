@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
@@ -74,6 +76,12 @@ class LoginControllerImp extends LoginController {
     //na3mlelhom initialisation
     email = TextEditingController();
     password = TextEditingController();
+
+    // Bch najem ne5o biha token mel FireBAse
+    FirebaseMessaging.instance.getToken().then((value)  {
+      print(value);
+      String? token = value;
+    });
     super.onInit();
   }
 

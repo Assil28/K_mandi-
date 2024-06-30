@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
-import 'package:k_mandi/core/class/statusrequest.dart';
 
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/auth/customtextbodyauth.dart';
@@ -21,7 +20,7 @@ class VerifyCodeSignUp extends StatelessWidget {
           elevation: 0.0,
           centerTitle: true,
           title: Text("21".tr,
-              style: Theme.of(context).textTheme.headline1!.copyWith(
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                     color: AppColor.grey,
                   )),
         ),
