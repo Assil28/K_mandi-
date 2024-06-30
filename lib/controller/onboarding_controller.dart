@@ -21,8 +21,8 @@ class OnBoardingControllerImp extends OnBoardingController {
   next() {
     currentPage++;
     if (currentPage > onBoardingList.length - 1) {
-      //lehna gotlo medem l user awel mara ysob lapp w mzl me 3malech choose language donc hotli f sharedpreference l onboarding a 1
-      myServices.sharedPreferences.setString("onboarding", "1");
+      //lehna gotlo medem l user awel mara ysob lapp w mzl me 3malech choose language donc hotli f sharedpreference l step a 1
+      myServices.sharedPreferences.setString("step", "1");
       ////////
       Get.offAllNamed(AppRoutes.login);
     } else {
