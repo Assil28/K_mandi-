@@ -14,5 +14,10 @@ class LinkApi {
   static const String checkEmail = "$serveur/forgetpassword/checkemail.php";
   static const String verifyCodeForgetPassword   = "$serveur/forgetpassword/verifycode.php";
   static const String resetPassword = "$serveur/forgetpassword/resetpassword.php";
+
+
+  //Home
+    static const String homepage = "$serveur/home.php";
+
 }
 
