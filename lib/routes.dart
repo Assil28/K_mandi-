@@ -17,10 +17,10 @@ import 'package:k_mandi/view/screen/onboarding.dart';
 // medem nesta3mel fel getx donc  bch na3mel List
 List<GetPage<dynamic>>? routes = [
   // l app par defaut tabda m Language nhot fiha l middleware l 3malto
-  GetPage(
-      name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
-  //  GetPage(
-  //     name: "/", page: () => const Test(),),
+  // GetPage(
+  //     name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
+   GetPage(
+      name: "/", page: () => const HomePage(),),
 
 //Auth
   GetPage(name: AppRoutes.login, page: () => const Login()),
