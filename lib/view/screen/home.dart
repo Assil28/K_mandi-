@@ -130,13 +130,69 @@ class HomePage extends StatelessWidget {
                                     Text(
                                       "${controller.categories[index]['categories_name']}",
                                       style: const TextStyle(
-                                          fontSize: 13, color: AppColor.balck),
+                                          fontSize: 13, color: AppColor.black),
                                     ),
                                   ],
                                 );
                               }),
                         ),
-                        const SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "64".tr,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: AppColor.primaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        SizedBox(
+                          height: 200,
+                          child: ListView.builder(
+                              itemCount: 3,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                return Stack(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 10),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 10),
+                                      child: Image.asset(
+                                        "assets/images/2.png",
+                                        height: 100,
+                                        width: 150,
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          color:
+                                              AppColor.black.withOpacity(0.3),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      height: 120,
+                                      width: 200,
+                                    ),
+                                    const Positioned(
+                                        left: 10,
+                                        child: Text(
+                                          "Laptop Surface GO 2 ",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 17,
+                                          ),
+                                        ))
+                                  ],
+                                );
+                              }),
+                        )
                       ],
                     ),
                   ),

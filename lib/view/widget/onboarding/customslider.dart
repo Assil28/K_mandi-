@@ -32,7 +32,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
-                      color: AppColor.balck),
+                      color: AppColor.black),
                 ),
                 const SizedBox(
                   height: 20,
