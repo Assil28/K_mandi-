@@ -11,4 +11,5 @@ class HomeData {
     var response = await crud.postData(LinkApi.homepage, {});
     return response.fold((l) => l, (r) => r);
   }
+
 }
