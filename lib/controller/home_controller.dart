@@ -17,6 +17,7 @@ class HomeControllerImp extends HomeController {
 
   HomeData homeData = HomeData(Get.find());
   List categories = [];
+  List items = [];
   List data = [];
 
   late StatusRequest statusRequest;
@@ -44,6 +45,7 @@ class HomeControllerImp extends HomeController {
       if (response['status'] == " success") {
         // nejbed l catogies m data l jebtha mel back
         categories.addAll(response['categories']);
+         items.addAll(response['items']);
       } else {
         statusRequest = StatusRequest.failure;
       }

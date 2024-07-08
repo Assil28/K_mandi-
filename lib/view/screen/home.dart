@@ -153,7 +153,7 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           height: 200,
                           child: ListView.builder(
-                              itemCount: 3,
+                              itemCount: controller.items.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
                                 return Stack(
@@ -163,8 +163,8 @@ class HomePage extends StatelessWidget {
                                           horizontal: 10, vertical: 10),
                                       margin: const EdgeInsets.symmetric(
                                           horizontal: 10),
-                                      child: Image.asset(
-                                        "assets/images/2.png",
+                                      child: Image.network(
+                                        "${LinkApi.imagesItems}/${controller.items[index]['items_images']}",
                                         height: 100,
                                         width: 150,
                                         fit: BoxFit.fill,
@@ -179,11 +179,11 @@ class HomePage extends StatelessWidget {
                                       height: 120,
                                       width: 200,
                                     ),
-                                    const Positioned(
+                                     Positioned(
                                         left: 10,
                                         child: Text(
-                                          "Laptop Surface GO 2 ",
-                                          style: TextStyle(
+                                          "${controller.items[index]['items_name']}",
+                                          style: const TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 17,
