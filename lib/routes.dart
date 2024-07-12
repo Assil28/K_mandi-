@@ -2,6 +2,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/core/middleware/mymiddleware.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/fogetpassword.dart';
+import 'package:k_mandi/view/screen/homescreen.dart';
 import 'package:k_mandi/view/screen/auth/login.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/resetpassword.dart';
 import 'package:k_mandi/view/screen/auth/signup.dart';
@@ -20,7 +21,7 @@ List<GetPage<dynamic>>? routes = [
   // GetPage(
   //     name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
    GetPage(
-      name: "/", page: () => const HomePage(),),
+      name: "/", page: () => const HomeScreen(),),
 
 //Auth
   GetPage(name: AppRoutes.login, page: () => const Login()),
@@ -39,7 +40,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoutes.onBoarding, page: () => const OnBoarding()),
 
   // Home
-  GetPage(name: AppRoutes.homePage, page: () => const HomePage()),
+  GetPage(name: AppRoutes.homePage, page: () => const HomeScreen()),
 ];
 
 

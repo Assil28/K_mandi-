@@ -18,11 +18,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(HomeControllerImp());
 
-    return Scaffold(
-        appBar: AppBar(
-            //title: Text('${controller.username}'),
-            ),
-        body: GetBuilder<HomeControllerImp>(
+    return GetBuilder<HomeControllerImp>(
             builder: (controller) => HandlingDataView(
                   statusRequest: controller.statusRequest,
                   widget: Container(
@@ -40,24 +36,20 @@ class HomePage extends StatelessWidget {
                         CustomCardHome(title: "62".tr, body: "63".tr),
 
                         //3ém PArtie listView catgories
+                        CustomTitleHome(title: "65".tr),
+
+
                         const ListCategoriesHome(),
 
-                        const SizedBox(
-                          height: 10,
-                        ),
 
                         //4ém partie (ProductFor u)
                         CustomTitleHome(title: "64".tr),
-
-                        const SizedBox(
-                          height: 10,
-                        ),
 
                         //5ém Partie (liste des produit)
                          const ListItemsHome(),
                       ],
                     ),
                   ),
-                )));
+                ));
   }
 }
