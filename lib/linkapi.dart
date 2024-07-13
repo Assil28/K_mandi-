@@ -25,4 +25,7 @@ class LinkApi {
 
   //Home
   static const String homepage = "$serveur/home.php";
+
+  // items
+  static const String items = "$serveur/items/items.php"  ;
 }

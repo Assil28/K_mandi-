@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/data/datasource/remote/home_data.dart';
@@ -7,6 +8,7 @@ import 'package:k_mandi/data/datasource/remote/home_data.dart';
 abstract class HomeController extends GetxController {
   initialData();
   getData();
+  goToItems(List catgories,int selectedCat);
 }
 
 class HomeControllerImp extends HomeController {
@@ -52,5 +54,16 @@ class HomeControllerImp extends HomeController {
     }
     // pour faire refresh lel ui
     update();
+  }
+
+  @override
+  goToItems( catgories, selectedCat) {
+   Get.toNamed(AppRoutes.items,arguments:
+      {
+        "categories" : catgories,
+        "selectedCat": selectedCat
+      }
+
+   );
   }
 }
