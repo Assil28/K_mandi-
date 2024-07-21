@@ -13,6 +13,7 @@ class Items extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     Get.put(ItemsControllerImp());
 
     return Scaffold(
@@ -37,7 +38,7 @@ class Items extends StatelessWidget {
                   //3ém partie
                   GridView.builder(
                       shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       itemCount:controller.data.length,
                       gridDelegate:
                       const SliverGridDelegateWithFixedCrossAxisCount(

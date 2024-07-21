@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:k_mandi/core/constant/color.dart';
 
 class CustomCardHome extends StatelessWidget {

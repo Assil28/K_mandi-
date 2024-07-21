@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
-import 'package:k_mandi/controller/home_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/data/datasource/model/categoriesmodel.dart';
-import 'package:k_mandi/linkapi.dart';
 
 import '../../../controller/items_controller.dart';
 
 
 class ListCategoriesItems extends GetView<ItemsControllerImp> {
-  const ListCategoriesItems({Key? key}) : super(key: key);
+  const ListCategoriesItems({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +49,7 @@ class Categories extends GetView<ItemsControllerImp> {
           GetBuilder<ItemsControllerImp>(
               builder: (controller) => Container(
 
-                padding: EdgeInsets.only(right: 10 , left: 10 , bottom: 5),
+                padding:  EdgeInsets.only(right: 10 , left: 10 , bottom: 5),
                 decoration: controller.selectedCat == i
                     ? BoxDecoration(
                     border: Border(

@@ -1,6 +1,4 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:k_mandi/linkapi.dart';
 
@@ -9,7 +7,7 @@ import '../../../data/datasource/model/itemsmodel.dart';
 
 class CustomListItems extends StatelessWidget {
   final ItemsModel itemsModel;
-  const CustomListItems({Key? key, required this.itemsModel}) : super(key: key);
+  const CustomListItems({super.key, required this.itemsModel});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +24,9 @@ class CustomListItems extends StatelessWidget {
                     height: 100,
                     fit: BoxFit.fill,
                   ),
-                  SizedBox(height: 10) ,
+                 const SizedBox(height: 10) ,
                   Text(itemsModel.itemsName!,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: AppColor.black,
                           fontSize: 16,
                           fontWeight: FontWeight.bold)),
@@ -43,7 +41,7 @@ class CustomListItems extends StatelessWidget {
                           children: [
                             ...List.generate(
                                 5,
-                                    (index) => Icon(
+                                    (index) =>const Icon(
                                   Icons.star,
                                   size: 15,
                                 ))
@@ -56,14 +54,14 @@ class CustomListItems extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("${itemsModel.itemsPrice} \$",
-                          style: TextStyle(
+                          style:const TextStyle(
                               color: AppColor.primaryColor,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "sans")),
                       IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.favorite,
                             color: AppColor.primaryColor,
                           ))

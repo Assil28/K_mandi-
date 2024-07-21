@@ -8,7 +8,7 @@ import 'package:k_mandi/data/datasource/remote/home_data.dart';
 abstract class HomeController extends GetxController {
   initialData();
   getData();
-  goToItems(List catgories,int selectedCat);
+  goToItems(List catgories,int selectedCat, String categoryid);
 }
 
 class HomeControllerImp extends HomeController {
@@ -57,11 +57,12 @@ class HomeControllerImp extends HomeController {
   }
 
   @override
-  goToItems( catgories, selectedCat) {
+  goToItems( catgories, selectedCat,categoryid) {
    Get.toNamed(AppRoutes.items,arguments:
       {
         "categories" : catgories,
-        "selectedCat": selectedCat
+        "selectedCat": selectedCat,
+        "catid" : categoryid
       }
 
    );
