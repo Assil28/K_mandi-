@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:k_mandi/controller/home_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 
-class CustomCardHome extends StatelessWidget {
+class CustomCardHome extends GetView<HomeControllerImp> {
   final String title;
   final String body;
   const CustomCardHome({super.key, required this.title, required this.body});
@@ -29,7 +31,8 @@ class CustomCardHome extends StatelessWidget {
           ),
           Positioned(
             top: -20,
-            right: -20,
+            right:controller.lang == "en" ? -20 : null,
+            left : controller.lang == "ar" ? -20 : null,
             child: Container(
               height: 160,
               width: 160,

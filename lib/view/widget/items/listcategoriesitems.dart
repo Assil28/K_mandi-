@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/functions/translatedatabase.dart';
 import 'package:k_mandi/data/datasource/model/categoriesmodel.dart';
 
 import '../../../controller/items_controller.dart';
-
 
 class ListCategoriesItems extends GetView<ItemsControllerImp> {
   const ListCategoriesItems({super.key});
@@ -23,7 +23,7 @@ class ListCategoriesItems extends GetView<ItemsControllerImp> {
           return Categories(
             i: index,
             categoriesModel:
-            CategoriesModel.fromJson(controller.categories[index]),
+                CategoriesModel.fromJson(controller.categories[index]),
           );
         },
       ),
@@ -42,26 +42,25 @@ class Categories extends GetView<ItemsControllerImp> {
     return InkWell(
       onTap: () {
         // controller.goToItems(controller.categories, i!);
-        controller.changeCat(i! , categoriesModel.categoriesId!);
+        controller.changeCat(i!, categoriesModel.categoriesId!);
       },
       child: Column(
         children: [
           GetBuilder<ItemsControllerImp>(
               builder: (controller) => Container(
-
-                padding:  EdgeInsets.only(right: 10 , left: 10 , bottom: 5),
-                decoration: controller.selectedCat == i
-                    ? BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                            width: 3, color: AppColor.primaryColor)))
-                    : null,
-                child: Text(
-                  "${categoriesModel.categoriesName}",
-                  style:
-                  const TextStyle(fontSize: 20, color: AppColor.grey2),
-                ),
-              ))
+                    padding: const EdgeInsets.only(right: 10, left: 10, bottom: 5),
+                    decoration: controller.selectedCat == i
+                        ? const BoxDecoration(
+                            border: Border(
+                                bottom: BorderSide(
+                                    width: 3, color: AppColor.primaryColor)))
+                        : null,
+                    child: Text(
+                      "${TranslateDataBase(categoriesModel.categoriesNameAr, categoriesModel.categoriesName)}",
+                      style:
+                          const TextStyle(fontSize: 20, color: AppColor.grey2),
+                    ),
+                  ))
         ],
       ),
     );

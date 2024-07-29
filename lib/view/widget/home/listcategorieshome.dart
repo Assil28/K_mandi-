@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:k_mandi/controller/home_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/functions/translatedatabase.dart';
 import 'package:k_mandi/data/datasource/model/categoriesmodel.dart';
 import 'package:k_mandi/linkapi.dart';
 
@@ -59,7 +60,7 @@ class Categories extends GetView<HomeControllerImp> {
             ),
           ),
           Text(
-            "${categoriesModel.categoriesName}",
+            "${TranslateDataBase(categoriesModel.categoriesNameAr, categoriesModel.categoriesName)}",
             style: const TextStyle(fontSize: 13, color: AppColor.black),
           ),
         ],

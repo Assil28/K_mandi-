@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:k_mandi/core/functions/translatedatabase.dart';
 import 'package:k_mandi/linkapi.dart';
 
 import '../../../core/constant/color.dart';
@@ -25,7 +26,7 @@ class CustomListItems extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                  const SizedBox(height: 10) ,
-                  Text(itemsModel.itemsName!,
+                  Text(TranslateDataBase(itemsModel.itemsNameAr!, itemsModel.itemsName!),
                       style: const TextStyle(
                           color: AppColor.black,
                           fontSize: 16,
@@ -33,7 +34,7 @@ class CustomListItems extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Rating 3.5 ", textAlign: TextAlign.center),
+                      const Text("Rating 3.5 ", textAlign: TextAlign.center),
                       Container(
                         alignment: Alignment.bottomCenter,
                         height: 22,
