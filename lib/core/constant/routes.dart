@@ -15,8 +15,10 @@ class AppRoutes {
   // Home
     static const String homePage = "/homepage";
 
-  // Home
+  // Product
   static const String items = "/items";
+  static const String productdetails = "/productdetails";
+
 
 
 }

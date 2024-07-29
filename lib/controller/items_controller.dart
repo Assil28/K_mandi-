@@ -1,14 +1,15 @@
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
+import 'package:k_mandi/data/datasource/model/itemsmodel.dart';
 
 import '../data/datasource/remote/items_data.dart';
-
 
 abstract class ItemsController extends GetxController {
   intialData();
   changeCat(int val, String catval); // changer l categorie l dkhalnelha
   getItems(String categoryid);
+  gotToPageProductDetails(ItemsModel itemsModel);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -61,5 +62,10 @@ class ItemsControllerImp extends ItemsController {
       // End
     }
     update();
+  }
+
+  @override
+  gotToPageProductDetails(itemsModel) {
+    Get.toNamed("productdetails", arguments: {"itemsModel": itemsModel});
   }
 }

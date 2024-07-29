@@ -13,6 +13,7 @@ import 'package:k_mandi/view/screen/home.dart';
 import 'package:k_mandi/view/screen/items.dart';
 
 import 'package:k_mandi/view/screen/onboarding.dart';
+import 'package:k_mandi/view/screen/productdetails.dart';
 
 // medem nesta3mel fel getx donc  bch na3mel List
 List<GetPage<dynamic>>? routes = [
@@ -20,7 +21,7 @@ List<GetPage<dynamic>>? routes = [
   // GetPage(
   //     name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
    GetPage(
-      name: "/", page: () => const HomeScreen(),),
+      name: "/", page: () => const ProductDetails(),),
 
 //Auth
   GetPage(name: AppRoutes.login, page: () => const Login()),
@@ -44,6 +45,7 @@ List<GetPage<dynamic>>? routes = [
 
   // Items page
   GetPage(name: AppRoutes.items, page: () => const Items()),
+  GetPage(name: AppRoutes.productdetails, page: () => const ProductDetails()),
 ];
 
 
