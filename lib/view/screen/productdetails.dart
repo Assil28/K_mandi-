@@ -35,6 +35,7 @@ class ProductDetails extends StatelessWidget {
           const SizedBox(
             height: 100,
           ),
+
           Container(
             padding: const EdgeInsets.all(20),
             child:
@@ -55,7 +56,12 @@ class ProductDetails extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                         color: AppColor.fourthColor,
                       )),
+             
+             
               const SizedBox(height: 10),
+              
+              
+              // Liste des couleurs disponile
               const SubitemsList()
             ]),
           )
