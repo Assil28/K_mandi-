@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:k_mandi/controller/home_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/linkapi.dart';
 import 'package:k_mandi/view/widget/customappbar.dart';
 import 'package:k_mandi/view/widget/home/customcardhome.dart';
@@ -30,6 +31,9 @@ class HomePage extends StatelessWidget {
                           title: "61".tr,
                           onPressedIcon: () {},
                           onPressedSearch: () {},
+                          onPressedIconFavorite: (){
+                            Get.toNamed(AppRoutes.myfavorite);
+                          },
                         ),
 
                         //2ém partie

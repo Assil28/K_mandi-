@@ -11,6 +11,7 @@ import 'package:k_mandi/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:k_mandi/view/screen/auth/verifycodesignup.dart';
 import 'package:k_mandi/view/screen/home.dart';
 import 'package:k_mandi/view/screen/items.dart';
+import 'package:k_mandi/view/screen/myfavorite.dart';
 
 import 'package:k_mandi/view/screen/onboarding.dart';
 import 'package:k_mandi/view/screen/productdetails.dart';
@@ -46,6 +47,9 @@ List<GetPage<dynamic>>? routes = [
   // Items page
   GetPage(name: AppRoutes.items, page: () => const Items()),
   GetPage(name: AppRoutes.productdetails, page: () => const ProductDetails()),
+
+  // Favorite
+  GetPage(name: AppRoutes.myfavorite, page: () => const MyFavorite()),
 ];
 
 

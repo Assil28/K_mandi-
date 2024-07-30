@@ -22,9 +22,11 @@ class Items extends StatelessWidget {
         child: ListView(children: [
           //1ér partie customAppBar ( recherche l fouganeya )
           CustomAppBar(
-              title: "Find Product",
-              onPressedIcon: () {},
-              onPressedSearch: () {}),
+            title: "Find Product",
+            onPressedIcon: () {},
+            onPressedSearch: () {},
+            onPressedIconFavorite: () {},
+          ),
 
           const SizedBox(height: 20),
 
@@ -47,7 +49,7 @@ class Items extends StatelessWidget {
                           itemBuilder: (BuildContext context, index) {
                             controllerFav.isFavoite[controller.data[index]
                                     ['items_id']] ==
-                                controller.data[index]['favorite']; 
+                                controller.data[index]['favorite'];
 
                             return CustomListItems(
                                 itemsModel: ItemsModel.fromJson(

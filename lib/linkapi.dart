@@ -32,4 +32,9 @@ class LinkApi {
     // Favorite
   static const String favoriteAdd = "/favorite/add.php";
   static const String favoriteRemove = "/favorite/remove.php";
+     //to display favorite product
+  static const String favoriteView = "/favorite/view.php";
+
+  static const String deletefromfavorite = "/favorite/deletefromfavroite.php";
+
 }
