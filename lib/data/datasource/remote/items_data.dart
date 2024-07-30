@@ -8,8 +8,8 @@ class ItemsData {
   ItemsData(this.crud);
 
   
-  getData(String id) async {
-    var response = await crud.postData(LinkApi.items, {"id" : id.toString()});
+  getData(String id,String userid) async {
+    var response = await crud.postData(LinkApi.items, {"id" : id.toString(),"usersid":userid});
     return response.fold((l) => l, (r) => r);
   }
 }

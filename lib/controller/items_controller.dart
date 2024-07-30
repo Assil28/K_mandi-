@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
+import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/data/datasource/model/itemsmodel.dart';
 
 import '../data/datasource/remote/items_data.dart';
@@ -22,6 +23,8 @@ class ItemsControllerImp extends ItemsController {
   List data = [];
 
   late StatusRequest statusRequest;
+
+  MyServices myServices = Get.find();
 
   @override
   void onInit() {
@@ -49,7 +52,8 @@ class ItemsControllerImp extends ItemsController {
   getItems(categoryid) async {
     data.clear();
     statusRequest = StatusRequest.loading;
-    var response = await testData.getData(categoryid);
+    var response = await testData.getData(
+        categoryid, myServices.sharedPreferences.getString("id")!);
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {

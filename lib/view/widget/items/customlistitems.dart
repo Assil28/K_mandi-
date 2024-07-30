@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:k_mandi/controller/favorite_controller.dart';
 import 'package:k_mandi/controller/items_controller.dart';
 import 'package:k_mandi/core/functions/translatedatabase.dart';
 import 'package:k_mandi/linkapi.dart';
@@ -10,6 +11,7 @@ import '../../../data/datasource/model/itemsmodel.dart';
 
 class CustomListItems extends GetView<ItemsControllerImp> {
   final ItemsModel itemsModel;
+//  final bool active;
   const CustomListItems({super.key, required this.itemsModel});
 
   @override
@@ -71,12 +73,26 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               fontFamily: "sans")),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.favorite,
+                      GetBuilder<FavoriteController>(
+                        builder: (controller) => IconButton(
+                          onPressed: () {
+                            if (controller.isFavoite[itemsModel.itemsId] ==
+                                "1") {
+                              controller.setFavorite(itemsModel.itemsId, "0");
+                              controller.removeFavorite(itemsModel.itemsId!);
+                            } else {
+                              controller.setFavorite(itemsModel.itemsId, "1");
+                              controller.addFavorite(itemsModel.itemsId!);
+                            }
+                          },
+                          icon: Icon(
+                            controller.isFavoite[itemsModel.itemsId] == "1"
+                                ? Icons.favorite
+                                : Icons.favorite_border_outlined,
                             color: AppColor.primaryColor,
-                          ))
+                          ),
+                        ),
+                      ),
                     ],
                   )
                 ]),
