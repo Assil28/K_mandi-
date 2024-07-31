@@ -23,10 +23,10 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: ListView(
                       children: [
-                        //1ér partie customAppBar ( recherche l fouganeya )
+                        //1ér partie customAppBar ( recherche l fouganeya w les boutton l bejnabha )
                         CustomAppBar(
                           title: "61".tr,
-                          onPressedIcon: () {},
+                          //onPressedIcon: () {},
                           onPressedSearch: () {},
                           onPressedIconFavorite: (){
                             Get.toNamed(AppRoutes.myfavorite);

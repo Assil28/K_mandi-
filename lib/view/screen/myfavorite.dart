@@ -19,7 +19,7 @@ class MyFavorite extends StatelessWidget {
             builder: ((controller) => ListView(children: [
                   CustomAppBar(
                     title: "61".tr,
-                    onPressedIcon: () {},
+                   // onPressedIcon: () {},
                     onPressedSearch: () {},
                     onPressedIconFavorite: () {
                       Get.toNamed(AppRoutes.myfavorite);

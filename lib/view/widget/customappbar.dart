@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;
-  final void Function()? onPressedIcon;
+ // final void Function()? onPressedIcon;
   final void Function()? onPressedSearch;
   final void Function()? onPressedIconFavorite;
   const CustomAppBar(
       {super.key,
       required this.title,
-      this.onPressedIcon,
+      //this.onPressedIcon,
       this.onPressedSearch,
       required this.onPressedIconFavorite});
 
@@ -34,23 +34,23 @@ class CustomAppBar extends StatelessWidget {
           )),
 
           // for alert icon
-          const SizedBox(
-            width: 10,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(20)),
-            width: 60,
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: IconButton(
-                onPressed: onPressedIcon,
-                icon: const Icon(
-                  size: 30,
-                  color: Colors.grey,
-                  Icons.notifications_active_outlined,
-                )),
-          ),
+          // const SizedBox(
+          //   width: 10,
+          // ),
+          // Container(
+          //   decoration: BoxDecoration(
+          //       color: Colors.grey[200],
+          //       borderRadius: BorderRadius.circular(20)),
+          //   width: 60,
+          //   padding: const EdgeInsets.symmetric(vertical: 8),
+          //   child: IconButton(
+          //       onPressed: onPressedIcon,
+          //       icon: const Icon(
+          //         size: 30,
+          //         color: Colors.grey,
+          //         Icons.notifications_active_outlined,
+          //       )),
+          // ),
 
           // for favorite icon
           const SizedBox(

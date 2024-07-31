@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,7 +6,6 @@ import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/data/datasource/remote/auth/login.dart';
-import 'package:k_mandi/view/screen/auth/login.dart';
 
 abstract class LoginController extends GetxController {
   login();

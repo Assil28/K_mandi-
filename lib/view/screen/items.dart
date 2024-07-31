@@ -23,7 +23,7 @@ class Items extends StatelessWidget {
           //1ér partie customAppBar ( recherche l fouganeya )
           CustomAppBar(
             title: "Find Product",
-            onPressedIcon: () {},
+           // onPressedIcon: () {},
             onPressedSearch: () {},
             onPressedIconFavorite: () {},
           ),
