@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/home_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
-import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/constant/routes.dart';
-import 'package:k_mandi/linkapi.dart';
 import 'package:k_mandi/view/widget/customappbar.dart';
 import 'package:k_mandi/view/widget/home/customcardhome.dart';
 import 'package:k_mandi/view/widget/home/customtitlehome.dart';

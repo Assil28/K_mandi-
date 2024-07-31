@@ -14,4 +14,11 @@ class VerifyCodeSignUpData {
     });
     return response.fold((l) => l, (r) => r);
   }
+
+   resenddata(String email)async{
+    var response = await crud.postData(LinkApi.resend, {
+       "email": email,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }

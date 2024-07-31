@@ -13,6 +13,7 @@ class LinkApi {
   // Auth Links
   static const String signUp = "$serveur/auth/signup.php";
   static const String verifycodeSignUp = "$serveur/auth/verfiycode.php";
+  static const String resend = "$serveur/auth/resend.php";
 
   static const String login = "$serveur/auth/login.php";
 

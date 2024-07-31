@@ -39,7 +39,7 @@ class VerifyCodeSignUp extends StatelessWidget {
                       height: 10,
                     ),
                     CustomTextBodyAuth(
-                      text: "23".tr,
+                      text: "${"23".tr}${controller.email}",
                     ),
                     const SizedBox(
                       height: 45,
@@ -61,6 +61,18 @@ class VerifyCodeSignUp extends StatelessWidget {
                     ),
                     const SizedBox(
                       height: 30,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        controller.resend();
+                      },
+                      child: Center(
+                        child: Text(
+                          "68".tr,
+                          style: const TextStyle(
+                              color: AppColor.primaryColor, fontSize: 20),
+                        ),
+                      ),
                     ),
                   ],
                 ),
