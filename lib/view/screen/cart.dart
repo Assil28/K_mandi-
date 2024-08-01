@@ -13,56 +13,56 @@ class Cart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //CartControllerImp cartController = Get.put(CartControllerImp());
+    CartControllerImp cartController = Get.put(CartControllerImp());
     return Scaffold(
         bottomNavigationBar: GetBuilder<CartControllerImp>(
-          builder: (controller) => BottomNavgationBarCart(
-              price: "${controller.priceorders}",
-              shipping: "300",
-              totalprice: "1500"),
-        ),
+            builder: (controller) => BottomNavgationBarCart(
+                price: "${cartController.priceorders}",
+                shipping: "300",
+                totalprice: "1500")),
         body: GetBuilder<CartControllerImp>(
-          builder: (controller) => HandlingDataView(
-            statusRequest: controller.statusRequest,
-            widget: ListView(
-              children: [
-                TopAppbarCart(
-                  title: '76'.tr,
-                ),
-                const SizedBox(height: 10),
-                TopCardCart(
-                    message:
-                        "You Have ${controller.totalcountitems} Items in Your List"),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    children: [
-                      ...List.generate(
-                        controller.data.length,
-                        (index) => CustomItemsCartList(
-                            onAdd: () async {
-                              await controller
-                                  .add(controller.data[index].itemsId!);
-                              controller.refreshPage();
-                            },
-                            onRemove: () async {
-                              await controller
-                                  .delete(controller.data[index].itemsId!);
-                              controller.refreshPage();
-                            },
-                            name: TranslateDataBase(
-                                controller.data[index].itemsNameAr,
-                                controller.data[index].itemsName),
-                            price: "${controller.data[index].itemsprice} \$",
-                            count: "${controller.data[index].countitems}",
-                            imagename: "${controller.data[index].countitems}"),
+            builder: ((controller) => HandlingDataView(
+                statusRequest: controller.statusRequest,
+                widget: ListView(
+                  children: [
+                    TopAppbarCart(
+                      title: '76'.tr,
+                    ),
+                    const SizedBox(height: 10),
+                    TopCardCart(
+                        message:
+                            "You Have ${cartController.totalcountitems} Items in Your List"),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          ...List.generate(
+                            cartController.data.length,
+                            (index) => CustomItemsCartList(
+                                onAdd: () async {
+                                  await cartController
+                                      .add(cartController.data[index].itemsId!);
+                                  cartController.refreshPage();
+                                },
+                                onRemove: () async {
+                                  await cartController.delete(
+                                      cartController.data[index].itemsId!);
+                                  cartController.refreshPage();
+                                },
+                                imagename:
+                                    "${cartController.data[index].itemsImage}",
+                                name: TranslateDataBase(
+                                    controller.data[index].itemsNameAr,
+                                    controller.data[index].itemsName),
+                                price:
+                                    "${cartController.data[index].itemsprice} \$",
+                                count:
+                                    "${cartController.data[index].countitems}"),
+                          )
+                        ],
                       ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        ));
+                    )
+                  ],
+                )))));
   }
 }
