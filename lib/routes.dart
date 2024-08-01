@@ -51,6 +51,10 @@ List<GetPage<dynamic>>? routes = [
 
   // Favorite
   GetPage(name: AppRoutes.myfavorite, page: () => const MyFavorite()),
+
+
+  //Cart
+   GetPage(name: AppRoutes.cart, page: () => const Cart()),
 ];
 
 

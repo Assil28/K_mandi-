@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/homescreen_controller.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/view/widget/home/custombottomappbarhome.dart';
 
 import '../../core/constant/color.dart';
@@ -19,7 +20,9 @@ class HomeScreen extends StatelessWidget {
           // l botton l jeya f west l bottomNavBar
           floatingActionButton: FloatingActionButton(
             backgroundColor: AppColor.primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppRoutes.cart);
+              },
               child: const Icon(Icons.shopping_basket_outlined)),
           floatingActionButtonLocation:
           FloatingActionButtonLocation.centerDocked,

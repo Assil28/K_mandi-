@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
+import 'package:k_mandi/data/datasource/model/cartmodel.dart';
 import 'package:k_mandi/data/datasource/remote/cart_data.dart';
 
 abstract class CartController extends GetxController {
@@ -18,70 +19,104 @@ abstract class CartController extends GetxController {
 class CartControllerImp extends CartController {
   CartData cartData = CartData(Get.find());
 
-  Map isFavoite = {};
-
   late StatusRequest statusRequest;
 
   MyServices myServices = Get.find();
 
+  List<CartModel> data = [];
+
+  double priceorders = 0.0;
+
+  int totalcountitems = 0;
+
   @override
-  add(String itemsId) async {
+  add(String itemsid) async {
     statusRequest = StatusRequest.loading;
+    update();
     var response = await cartData.addCart(
-        myServices.sharedPreferences.getString("id")!, itemsId);
+        myServices.sharedPreferences.getString("id")!, itemsid);
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
         Get.rawSnackbar(title: "49".tr, messageText: Text("72".tr));
+        // data.addAll(response['data']);
       } else {
         statusRequest = StatusRequest.failure;
       }
       // End
     }
+    update();
   }
 
   @override
-  delete(String itemsId) async {
+  delete(String itemsid) async {
     statusRequest = StatusRequest.loading;
+    update();
+
     var response = await cartData.deleteCart(
-        myServices.sharedPreferences.getString("id")!, itemsId);
+        myServices.sharedPreferences.getString("id")!, itemsid);
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
         Get.rawSnackbar(title: "49".tr, messageText: Text("73".tr));
+        // data.addAll(response['data']);
       } else {
         statusRequest = StatusRequest.failure;
       }
       // End
     }
+    update();
+  }
+
+  resetVarCart() {
+    totalcountitems = 0;
+    priceorders = 0.0;
+    data.clear();
+  }
+
+  refreshPage() {
+    resetVarCart();
+    view();
   }
 
   @override
-  getCountItems(String itemsId) async {
+  view() async {
     statusRequest = StatusRequest.loading;
-    var response = await cartData.getCountCart(
-        myServices.sharedPreferences.getString("id")!, itemsId);
+    update();
+    var response =
+        await cartData.viewCart(myServices.sharedPreferences.getString("id")!);
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
-        int countitems = 0;
-
-        countitems = int.parse(response['data']);
-        print("nbr darticle : $countitems");
-        return countitems;
+        if (response['datacart']['status'] == 'success') {
+          List dataresponse = response['datacart']['data'];
+          Map dataresponsecountprice = response['countprice'];
+          data.clear();
+          data.addAll(dataresponse.map((e) => CartModel.fromJson(e)));
+          totalcountitems = int.parse(dataresponsecountprice['totalcount']);
+          priceorders = double.parse(dataresponsecountprice['totalprice']);
+          print(priceorders);
+        }
       } else {
         statusRequest = StatusRequest.failure;
       }
       // End
     }
+    update();
   }
 
   @override
-  view() {}
+  void onInit() {
+    view();
+    super.onInit();
+  }
+
+  @override
+  getCountItems(String itemsId) {}
 }

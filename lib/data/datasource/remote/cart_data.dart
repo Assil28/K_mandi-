@@ -23,4 +23,10 @@ class CartData {
         LinkApi.cartgetcountitems, {"usersid": usersid, "itemsid": itemsid});
     return response.fold((l) => l, (r) => r);
   }
+
+  viewCart(String usersid) async {
+    var response = await crud
+        .postData(LinkApi.cartview, {"usersid": usersid});
+    return response.fold((l) => l, (r) => r);
+  }
 }

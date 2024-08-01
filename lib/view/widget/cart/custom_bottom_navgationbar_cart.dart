@@ -31,10 +31,10 @@ class BottomNavgationBarCart extends StatelessWidget {
           children: [
             Container(
                 padding:const  EdgeInsets.symmetric(horizontal: 20),
-                child: Text("$shipping", style: const TextStyle(fontSize: 16))),
+                child: Text("75".tr, style: const TextStyle(fontSize: 16))),
             Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: const Text("300 \$", style: TextStyle(fontSize: 16)))
+                child:  Text("$shipping \$", style: TextStyle(fontSize: 16)))
           ],
         ),
         const Divider(),

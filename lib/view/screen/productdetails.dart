@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:k_mandi/controller/productdetails_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/constant/color.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/view/widget/productdetails/priceandcount.dart';
 import 'package:k_mandi/view/widget/productdetails/toppageproductdetails.dart';
 
@@ -21,9 +22,11 @@ class ProductDetails extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 color: AppColor.secondColor,
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(AppRoutes.cart);
+                },
                 child: const Text(
-                  "Add To Cart",
+                  "Go To Cart",
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ))),

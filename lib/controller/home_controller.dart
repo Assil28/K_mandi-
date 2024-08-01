@@ -49,8 +49,8 @@ class HomeControllerImp extends HomeController {
     if (statusRequest == StatusRequest.success) {
       if (response['status'] == " success") {
         // nejbed l catogies m data l jebtha mel back
-        categories.addAll(response['categories']);
-         items.addAll(response['items']);
+        categories.addAll(response['categories']['data']);
+         items.addAll(response['items']['data']);
       } else {
         statusRequest = StatusRequest.failure;
       }
