@@ -7,7 +7,6 @@ class LinkApi {
   static const String imagesItems = "$imagestatic/items ";
 /*-------------------------*/
 
-
   static const String test = "$serveur/test.php";
 
   // Auth Links
@@ -28,20 +27,22 @@ class LinkApi {
   static const String homepage = "$serveur/home.php";
 
   // items
-  static const String items = "$serveur/items/items.php"  ;
+  static const String items = "$serveur/items/items.php";
 
-    // Favorite
+  // Favorite
   static const String favoriteAdd = "$serveur/favorite/add.php";
   static const String favoriteRemove = "$serveur/favorite/remove.php";
-     //to display favorite product
+  //to display favorite product
   static const String favoriteView = "$serveur/favorite/view.php";
 
-  static const String deletefromfavorite = "$serveur/favorite/deletefromfavroite.php";
+  static const String deletefromfavorite =
+      "$serveur/favorite/deletefromfavroite.php";
 
   //Cart
-    static const String cartview = "$serveur/cart/view.php";
-    static const String cartadd = "$serveur/cart/add.php";
-    static const String cartdelete = "$serveur/cart/delete.php";
+  static const String cartview = "$serveur/cart/view.php";
+  static const String cartadd = "$serveur/cart/add.php";
+  static const String cartdelete = "$serveur/cart/delete.php";
+  static const String cartgetcountitems = "$serveur/cart/cartgetcountitems.php";
 
 
 }

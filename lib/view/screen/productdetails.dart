@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/productdetails_controller.dart';
+import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/view/widget/productdetails/priceandcount.dart';
 import 'package:k_mandi/view/widget/productdetails/toppageproductdetails.dart';
@@ -26,49 +27,57 @@ class ProductDetails extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ))),
-        body: ListView(children: [
-          // l partie l fougeniya l fiha l card wel image Stack
-          const TopProductPageDetails(),
-          const SizedBox(
-            height: 100,
-          ),
+        body: GetBuilder<ProductDetailsControllerImp>(
+            builder: (controller) => HandlingDataView(
+                  statusRequest: controller.statusRequest,
+                  widget: ListView(
+                    children: [
+                      // l partie l fougeniya l fiha l card wel image Stack
+                      const TopProductPageDetails(),
+                      const SizedBox(
+                        height: 100,
+                      ),
 
-          Container(
-            padding: const EdgeInsets.all(20),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text("${controller.itemsModel.itemsName}",
-                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        color: AppColor.fourthColor,
-                      )),
-              const SizedBox(height: 10),
-              PriceAndCountItems(
-                  onAdd: () {
-                    controller.cartController
-                        .add(controller.itemsModel.itemsId!);
-                  },
-                  onRemove: () {
-                    controller.cartController
-                        .delete(controller.itemsModel.itemsId!);
-                  },
-                  price: "${controller.itemsModel.itemsPrice}",
-                  count: "2"),
-              const SizedBox(height: 10),
-              Text(
-                  "${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc}",
-                  style: Theme.of(context).textTheme.bodyLarge),
-              const SizedBox(height: 10),
-              // Text("Color",
-              //     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-              //           color: AppColor.fourthColor,
-              //         )),
+                      Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("${controller.itemsModel.itemsName}",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineLarge!
+                                      .copyWith(
+                                        color: AppColor.fourthColor,
+                                      )),
+                              const SizedBox(height: 10),
+                              PriceAndCountItems(
+                                  onAdd: () {
+                                    controller.add();
+                                  },
+                                  onRemove: () {
+                                    controller.remove();
+                                  },
+                                  price: "${controller.itemsModel.itemsPrice}",
+                                  count: "${controller.countitems}"),
+                              const SizedBox(height: 10),
+                              Text(
+                                  "${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc}",
+                                  style: Theme.of(context).textTheme.bodyLarge),
+                              const SizedBox(height: 10),
+                              // Text("Color",
+                              //     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                              //           color: AppColor.fourthColor,
+                              //         )),
 
-              // const SizedBox(height: 10),
+                              // const SizedBox(height: 10),
 
-              // // Liste des couleurs disponile
-              // const SubitemsList()
-            ]),
-          )
-        ]));
+                              // // Liste des couleurs disponile
+                              // const SubitemsList()
+                            ]),
+                      )
+                    ],
+                  ),
+                )));
   }
 }

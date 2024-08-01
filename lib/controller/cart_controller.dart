@@ -10,6 +10,8 @@ abstract class CartController extends GetxController {
 
   delete(String itemsId);
 
+  getCountItems(String itemsId);
+
   view();
 }
 
@@ -55,7 +57,30 @@ class CartControllerImp extends CartController {
         statusRequest = StatusRequest.failure;
       }
       // End
-    }}
+    }
+  }
+
+  @override
+  getCountItems(String itemsId) async {
+    statusRequest = StatusRequest.loading;
+    var response = await cartData.getCountCart(
+        myServices.sharedPreferences.getString("id")!, itemsId);
+    print("=============================== Controller $response ");
+    statusRequest = handlingData(response);
+    if (StatusRequest.success == statusRequest) {
+      // Start backend
+      if (response['status'] == "success") {
+        int countitems = 0;
+
+        countitems = int.parse(response['data']);
+        print("nbr darticle : $countitems");
+        return countitems;
+      } else {
+        statusRequest = StatusRequest.failure;
+      }
+      // End
+    }
+  }
 
   @override
   view() {}
