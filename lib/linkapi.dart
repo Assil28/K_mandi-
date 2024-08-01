@@ -28,6 +28,7 @@ class LinkApi {
 
   // items
   static const String items = "$serveur/items/items.php";
+  static const String searchitems = "$serveur/items/search.php";
 
   // Favorite
   static const String favoriteAdd = "$serveur/favorite/add.php";

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/favorite_controller.dart';
 import 'package:k_mandi/controller/items_controller.dart';
+import 'package:k_mandi/core/constant/routes.dart';
+import 'package:k_mandi/view/screen/home.dart';
 import '../../core/class/handlingdataview.dart';
 import '../../data/datasource/model/itemsmodel.dart';
 import '../widget/customappbar.dart';
@@ -13,19 +15,27 @@ class Items extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(ItemsControllerImp());
+    ItemsControllerImp controller = Get.put(ItemsControllerImp());
     FavoriteController controllerFav = Get.put(FavoriteController());
 
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(15),
         child: ListView(children: [
-          //1ér partie customAppBar ( recherche l fouganeya )
+          //1ér partie customAppBar ( recherche l fouganeya w les boutton l bejnabha )
           CustomAppBar(
-            title: "Find Product",
-           // onPressedIcon: () {},
-            onPressedSearch: () {},
-            onPressedIconFavorite: () {},
+            mycontroller: controller.search!,
+            onChanged: (val) {
+              controller.checkSearch(val);
+            },
+            title: "61".tr,
+            //onPressedIcon: () {},
+            onPressedSearch: () {
+              controller.onSearchItems();
+            },
+            onPressedIconFavorite: () {
+              Get.toNamed(AppRoutes.myfavorite);
+            },
           ),
 
           const SizedBox(height: 20),
@@ -34,12 +44,13 @@ class Items extends StatelessWidget {
           const ListCategoriesItems(),
 
           GetBuilder<ItemsControllerImp>(
-              builder: (controller) => HandlingDataView(
-                  statusRequest: controller.statusRequest,
-                  widget:
+            builder: (controller) => HandlingDataView(
+              statusRequest: controller.statusRequest,
+              widget:
 
-                      //3ém partie
-                      GridView.builder(
+                  //3ém partie
+                  !controller.isSearch
+                      ? GridView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: controller.data.length,
@@ -54,7 +65,12 @@ class Items extends StatelessWidget {
                             return CustomListItems(
                                 itemsModel: ItemsModel.fromJson(
                                     controller.data[index]));
-                          })))
+                          })
+                      : ListItemsSearch(
+                          listdatamodel: controller.listdata,
+                        ),
+            ),
+          )
         ]),
       ),
     );

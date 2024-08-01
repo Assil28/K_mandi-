@@ -2,15 +2,21 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;
- // final void Function()? onPressedIcon;
+  // final void Function()? onPressedIcon;
   final void Function()? onPressedSearch;
   final void Function()? onPressedIconFavorite;
-  const CustomAppBar(
-      {super.key,
-      required this.title,
-      //this.onPressedIcon,
-      this.onPressedSearch,
-      required this.onPressedIconFavorite});
+  final void Function(String)? onChanged;
+  final TextEditingController mycontroller;
+
+  const CustomAppBar({
+    super.key,
+    required this.title,
+    //this.onPressedIcon,
+    this.onPressedSearch,
+    required this.onPressedIconFavorite,
+    required this.onChanged,
+    required this.mycontroller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +27,8 @@ class CustomAppBar extends StatelessWidget {
           // for the search field
           Expanded(
               child: TextFormField(
+            onChanged: onChanged,
+            controller: mycontroller,  
             decoration: InputDecoration(
                 prefixIcon: IconButton(
                     icon: const Icon(Icons.search), onPressed: onPressedSearch),

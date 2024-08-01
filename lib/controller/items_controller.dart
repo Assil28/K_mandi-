@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:k_mandi/controller/home_controller.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
@@ -6,7 +8,7 @@ import 'package:k_mandi/data/datasource/model/itemsmodel.dart';
 
 import '../data/datasource/remote/items_data.dart';
 
-abstract class ItemsController extends GetxController {
+abstract class ItemsController extends SearchMixController {
   intialData();
   changeCat(int val, String catval); // changer l categorie l dkhalnelha
   getItems(String categoryid);
@@ -28,6 +30,8 @@ class ItemsControllerImp extends ItemsController {
 
   @override
   void onInit() {
+        search = TextEditingController();
+
     intialData();
     super.onInit();
   }
