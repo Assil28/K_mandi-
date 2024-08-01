@@ -72,8 +72,13 @@ class MyTranslation extends Translations {
           "66": "تمت إضافة المنتج إلى المفضلة",
           "67": "تمت إزالة المنتج من المفضلة",
           "68": "إعادة إرسال رمز التحقق",
-          "69": "",
-          "70": "",
+          "69": "سعر",
+          "70": "السعر الكلي",
+          "71": "مكان الامر",
+          "72": "تمت إضافة المنتج إلى سلة التسوق",
+          "73": "تمت إزالة المنتج من سلة التسوق",
+          "74": "",
+
         },
         "en": {
           "1": "Choose Language",
@@ -146,8 +151,12 @@ class MyTranslation extends Translations {
           "66": "Product added to favorite",
           "67": "Product removed from favorite",
           "68": "Resend verify code",
-          "69": "",
-          "70": "",
+          "69": "Price",
+          "70": "Total Price",
+          "71": "Place Order",
+          "72": "Product added to cart",
+          "73": "Product removed from cart",
+          "74": "",
         },
       };
 }

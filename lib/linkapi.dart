@@ -31,11 +31,17 @@ class LinkApi {
   static const String items = "$serveur/items/items.php"  ;
 
     // Favorite
-  static const String favoriteAdd = "/favorite/add.php";
-  static const String favoriteRemove = "/favorite/remove.php";
+  static const String favoriteAdd = "$serveur/favorite/add.php";
+  static const String favoriteRemove = "$serveur/favorite/remove.php";
      //to display favorite product
-  static const String favoriteView = "/favorite/view.php";
+  static const String favoriteView = "$serveur/favorite/view.php";
 
-  static const String deletefromfavorite = "/favorite/deletefromfavroite.php";
+  static const String deletefromfavorite = "$serveur/favorite/deletefromfavroite.php";
+
+  //Cart
+    static const String cartview = "$serveur/cart/view.php";
+    static const String cartadd = "$serveur/cart/add.php";
+    static const String cartdelete = "$serveur/cart/delete.php";
+
 
 }
