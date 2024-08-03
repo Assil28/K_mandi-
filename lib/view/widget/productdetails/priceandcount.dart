@@ -35,11 +35,18 @@ class PriceAndCountItems extends StatelessWidget {
           ],
         ),
         const Spacer(),
+        // hedha l prix du produit menghir discount
+        // Text(
+        //   "$price \$",
+        //   style: const TextStyle(
+        //       color: AppColor.primaryColor, fontSize: 30, height: 1.1),
+        // ),
+        // l prix du produit avec discount (fl productdetails 3adit l itemsPriceDiscount f 3oudh l itemsPrice)
         Text(
           "$price \$",
           style: const TextStyle(
               color: AppColor.primaryColor, fontSize: 30, height: 1.1),
-        )
+        ),
       ],
     );
   }

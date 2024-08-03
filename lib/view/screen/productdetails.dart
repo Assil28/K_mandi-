@@ -61,7 +61,9 @@ class ProductDetails extends StatelessWidget {
                                   onRemove: () {
                                     controller.remove();
                                   },
-                                  price: "${controller.itemsModel.itemsPrice}",
+                                 // price: "${controller.itemsModel.itemsPrice}",
+                                 //fl prix 3adit l prix aprés discount
+                                  price: "${controller.itemsModel.itemsPriceDiscount}",
                                   count: "${controller.countitems}"),
                               const SizedBox(height: 10),
                               Text(
