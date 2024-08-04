@@ -46,4 +46,13 @@ class LinkApi {
   static const String cartgetcountitems = "$serveur/cart/cartgetcountitems.php";
 
 
+    // Adress Client
+  
+  static const String addressView = "$serveur/address/view.php";
+  static const String addressAdd = "$serveur/address/add.php";
+  static const String addressEdit = "$serveur/address/edit.php";
+  static const String addressDelete = "$serveur/address/delete.php";
+
+
+
 }

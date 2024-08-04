@@ -25,6 +25,12 @@ class AppRoutes {
     // Cart
     static const String cart = "/cart";
 
+    // Address client
+        static const String addressview = "/addressview";
+        static const String addressadd = "/addressadd";
+        static const String addressadddetails = "/addressadddetails";
+
+
 
 
 }

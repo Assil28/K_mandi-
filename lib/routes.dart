@@ -1,5 +1,8 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:k_mandi/core/constant/routes.dart';
+import 'package:k_mandi/view/address/add.dart';
+import 'package:k_mandi/view/address/addaddressdetails.dart';
+import 'package:k_mandi/view/address/view.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/fogetpassword.dart';
 import 'package:k_mandi/view/screen/cart.dart';
 import 'package:k_mandi/view/screen/homescreen.dart';
@@ -55,6 +58,11 @@ List<GetPage<dynamic>>? routes = [
 
   //Cart
    GetPage(name: AppRoutes.cart, page: () => const Cart()),
+
+   //Adress client
+   GetPage(name: AppRoutes.addressview, page: () => const AddressView()),
+   GetPage(name: AppRoutes.addressadd, page: () => const AddressAdd()),
+   GetPage(name: AppRoutes.addressadddetails, page: () => const AddressAddDetails()),
 ];
 
 

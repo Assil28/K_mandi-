@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:k_mandi/controller/settings_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/constant/imageassets.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -52,7 +53,9 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 const Divider(),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(AppRoutes.addressview);
+                  },
                   trailing: Icon(Icons.location_on_outlined),
                   title: Text("Address"),
                 ),
