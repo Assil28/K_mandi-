@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/data/datasource/model/cartmodel.dart';
+import 'package:k_mandi/data/datasource/model/couponmodel.dart';
 import 'package:k_mandi/data/datasource/remote/cart_data.dart';
 
 abstract class CartController extends GetxController {
@@ -11,12 +13,16 @@ abstract class CartController extends GetxController {
 
   delete(String itemsId);
 
-  getCountItems(String itemsId);
-
   view();
+
+  checkCoupon();
+
+  getTotalPrice();
 }
 
 class CartControllerImp extends CartController {
+  TextEditingController? controllercoupon;
+
   CartData cartData = CartData(Get.find());
 
   late StatusRequest statusRequest;
@@ -28,6 +34,11 @@ class CartControllerImp extends CartController {
   double priceorders = 0.0;
 
   int totalcountitems = 0;
+
+  CouponModel? couponModel;
+
+  String? couponName;
+  double? discountCoupon = 0;
 
   @override
   add(String itemsid) async {
@@ -113,10 +124,37 @@ class CartControllerImp extends CartController {
 
   @override
   void onInit() {
+    controllercoupon = TextEditingController();
     view();
     super.onInit();
   }
 
   @override
-  getCountItems(String itemsId) {}
+  checkCoupon() async {
+    statusRequest = StatusRequest.loading;
+    update();
+
+    var response = await cartData.checkCoupon(controllercoupon!.text);
+    print("=============================== Controller $response ");
+    statusRequest = handlingData(response);
+    if (StatusRequest.success == statusRequest) {
+      // Start backend
+      if (response['status'] == "success") {
+        Map<String, dynamic> datacoupon = response['data'];
+        couponModel = CouponModel.fromJson(datacoupon);
+        discountCoupon = double.parse(couponModel!.couponDiscount!);
+        couponName = couponModel!.couponName;
+      } else {
+        // ken me famech coupon bel isem hedheka
+        discountCoupon = 0.0;
+        couponName = null; 
+      }
+    }
+    update();
+  }
+
+  @override
+  getTotalPrice() {
+    return (priceorders - priceorders * discountCoupon! / 100);
+  }
 }

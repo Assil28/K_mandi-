@@ -17,9 +17,15 @@ class Cart extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: GetBuilder<CartControllerImp>(
             builder: (controller) => BottomNavgationBarCart(
-                price: "${cartController.priceorders}",
-                shipping: "300",
-                totalprice: "1500")),
+                  price: "${cartController.priceorders}",
+                  discount: "10 %",
+                  shipping: "${cartController.discountCoupon}",
+                  totalprice: "${cartController.getTotalPrice()}",
+                  controllercoupon: controller.controllercoupon!,
+                  onApplyCoupon: () {
+                    controller.checkCoupon();
+                  },
+                )),
         body: GetBuilder<CartControllerImp>(
             builder: ((controller) => HandlingDataView(
                 statusRequest: controller.statusRequest,

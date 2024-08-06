@@ -25,8 +25,12 @@ class CartData {
   }
 
   viewCart(String usersid) async {
-    var response = await crud
-        .postData(LinkApi.cartview, {"usersid": usersid});
+    var response = await crud.postData(LinkApi.cartview, {"usersid": usersid});
+    return response.fold((l) => l, (r) => r);
+  }
+
+  checkCoupon(String couponname) async  {
+    var response = await crud.postData(LinkApi.checkcoupon, {"couponname": couponname});
     return response.fold((l) => l, (r) => r);
   }
 }

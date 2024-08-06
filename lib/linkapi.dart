@@ -1,4 +1,7 @@
 class LinkApi {
+
+    // ce file contient les APIs du backend
+
   static const String serveur = "http://localhost/ecommerce_Kmandi";
 
 //Images
@@ -52,6 +55,10 @@ class LinkApi {
   static const String addressAdd = "$serveur/address/add.php";
   static const String addressEdit = "$serveur/address/edit.php";
   static const String addressDelete = "$serveur/address/delete.php";
+
+  //Coupon
+    static const String checkcoupon  = "$serveur/coupon/checkcoupon.php";
+
 
 
 
