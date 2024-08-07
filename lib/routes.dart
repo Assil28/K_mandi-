@@ -5,6 +5,7 @@ import 'package:k_mandi/view/address/addaddressdetails.dart';
 import 'package:k_mandi/view/address/view.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/fogetpassword.dart';
 import 'package:k_mandi/view/screen/cart.dart';
+import 'package:k_mandi/view/screen/checkout.dart';
 import 'package:k_mandi/view/screen/homescreen.dart';
 import 'package:k_mandi/view/screen/auth/login.dart';
 import 'package:k_mandi/view/screen/auth/forgetpassword/resetpassword.dart';
@@ -63,6 +64,10 @@ List<GetPage<dynamic>>? routes = [
    GetPage(name: AppRoutes.addressview, page: () => const AddressView()),
    GetPage(name: AppRoutes.addressadd, page: () => const AddressAdd()),
    GetPage(name: AppRoutes.addressadddetails, page: () => const AddressAddDetails()),
+
+   //CheckOut
+      GetPage(name: AppRoutes.checkout, page: () => const Checkout()),
+ 
 ];
 
 

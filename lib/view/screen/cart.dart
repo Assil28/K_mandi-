@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/cart_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
+import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/functions/translatedatabase.dart';
 import 'package:k_mandi/view/widget/cart/appbarcart.dart';
 import 'package:k_mandi/view/widget/cart/customitemscartlist.dart';
@@ -15,6 +16,11 @@ class Cart extends StatelessWidget {
   Widget build(BuildContext context) {
     CartControllerImp cartController = Get.put(CartControllerImp());
     return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            '76'.tr,
+          ),
+        ),
         bottomNavigationBar: GetBuilder<CartControllerImp>(
             builder: (controller) => BottomNavgationBarCart(
                   price: "${cartController.priceorders}",
@@ -31,9 +37,6 @@ class Cart extends StatelessWidget {
                 statusRequest: controller.statusRequest,
                 widget: ListView(
                   children: [
-                    TopAppbarCart(
-                      title: '76'.tr,
-                    ),
                     const SizedBox(height: 10),
                     TopCardCart(
                         message:
