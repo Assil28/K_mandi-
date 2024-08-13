@@ -51,6 +51,22 @@ class SettingsScreen extends StatelessWidget {
                   Switch(onChanged: (val) {}, value: true),
                   title: Text("Disable Notificatios"),
                 ),
+                 const Divider(),
+                ListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.orderspending);
+                  },
+                  title: Text("Oders"), 
+                  trailing: Icon(Icons.card_travel),
+                ),
+                const Divider(),
+                ListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.addressview);
+                  },
+                  trailing: Icon(Icons.archive_outlined),
+                  title: Text("Archive Orders"),
+                ),
                 const Divider(),
                 ListTile(
                   onTap: () {

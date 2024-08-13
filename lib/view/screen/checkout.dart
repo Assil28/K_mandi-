@@ -13,7 +13,7 @@ class Checkout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //CheckoutControllerImp controller = Get.put(CheckoutControllerImp());
+    CheckoutControllerImp controller = Get.put(CheckoutControllerImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -24,7 +24,9 @@ class Checkout extends StatelessWidget {
           child: MaterialButton(
             color: AppColor.secondColor,
             textColor: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              controller.checkout();
+            },
             child: Text(
               "84".tr,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -48,24 +50,24 @@ class Checkout extends StatelessWidget {
                 const SizedBox(height: 10),
                 InkWell(
                   onTap: () {
-                    // pour choisir la methode du payement cash
-                    controller.choosePaymentMethod("cash");
+                    // pour choisir la methode du payement cash ( 0 = cash )
+                    controller.choosePaymentMethod("0");
                   },
                   child: CardPaymentMethodCheckout(
                       title: "86".tr,
                       isActive:
-                          controller.paymentMethod == "cash" ? true : false),
+                          controller.paymentMethod == "0" ? true : false),
                 ),
                 const SizedBox(height: 10),
                 InkWell(
                   onTap: () {
-                    // pour choisir la methode du payement par card
-                    controller.choosePaymentMethod("card");
+                    // pour choisir la methode du payement par card ( 1 = card )
+                    controller.choosePaymentMethod("1");
                   },
                   child: CardPaymentMethodCheckout(
                       title: "87".tr,
                       isActive:
-                          controller.paymentMethod == "card" ? true : false),
+                          controller.paymentMethod == "1" ? true : false),
                 ),
                 /**************** */
 
@@ -83,26 +85,26 @@ class Checkout extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        // pour choisir la methode du recuperation du produit par delivery
-                        controller.chooseDeliveryType("delivery");
+                        // pour choisir la methode du recuperation du produit par delivery ( 0 = delivery )
+                        controller.chooseDeliveryType("0");
                       },
                       child: CardDeliveryTypeCheckout(
                           imagename: AppImageAsset.deliveryImage2,
                           title: "89".tr,
-                          active: controller.deliveryType == "delivery"
+                          active: controller.deliveryType == "0"
                               ? true
                               : false),
                     ),
                     const SizedBox(width: 10),
                     InkWell(
                       onTap: () {
-                        // pour choisir la methode du recuperation du produit on personne (sur place)
-                        controller.chooseDeliveryType("recive");
+                        // pour choisir la methode du recuperation du produit on personne (sur place) (1 = receive )
+                        controller.chooseDeliveryType("1");
                       },
                       child: CardDeliveryTypeCheckout(
                           imagename: AppImageAsset.drivethruImage,
                           title: "Revice",
-                          active: controller.deliveryType == "recive"
+                          active: controller.deliveryType == "1"
                               ? true
                               : false),
                     ),

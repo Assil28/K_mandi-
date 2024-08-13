@@ -1,6 +1,5 @@
 class LinkApi {
-
-    // ce file contient les APIs du backend
+  // ce file contient les APIs du backend
 
   static const String serveur = "http://localhost/ecommerce_Kmandi";
 
@@ -48,18 +47,23 @@ class LinkApi {
   static const String cartdelete = "$serveur/cart/delete.php";
   static const String cartgetcountitems = "$serveur/cart/cartgetcountitems.php";
 
+  // Adress Client
 
-    // Adress Client
-  
   static const String addressView = "$serveur/address/view.php";
   static const String addressAdd = "$serveur/address/add.php";
   static const String addressEdit = "$serveur/address/edit.php";
   static const String addressDelete = "$serveur/address/delete.php";
 
   //Coupon
-    static const String checkcoupon  = "$serveur/coupon/checkcoupon.php";
+  static const String checkcoupon = "$serveur/coupon/checkcoupon.php";
 
+  // Checkout
+  static const String checkout = "$serveur/orders/checkout.php";
 
-
-
+  static const String pendingorders =
+      "$serveur/orders/pending.php"; //mes commandes en cours
+  static const String ordersarchive =
+      "$serveur/orders/archive.php"; // les commandes l c'est bon weslouni 
+  static const String ordersdetails = "$serveur/orders/details.php";
+  static const String ordersdelete = "$serveur/orders/delete.php";
 }

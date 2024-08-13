@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/data/datasource/model/cartmodel.dart';
@@ -18,6 +19,8 @@ abstract class CartController extends GetxController {
   checkCoupon();
 
   getTotalPrice();
+
+  goToPageCheckout();
 }
 
 class CartControllerImp extends CartController {
@@ -38,6 +41,7 @@ class CartControllerImp extends CartController {
   CouponModel? couponModel;
 
   String? couponName;
+  String? couponid;
   double? discountCoupon = 0;
 
   @override
@@ -144,10 +148,13 @@ class CartControllerImp extends CartController {
         couponModel = CouponModel.fromJson(datacoupon);
         discountCoupon = double.parse(couponModel!.couponDiscount!);
         couponName = couponModel!.couponName;
+        couponid = couponModel!.couponId;
       } else {
         // ken me famech coupon bel isem hedheka
         discountCoupon = 0.0;
-        couponName = null; 
+        couponName = null;
+        couponid = null;
+        Get.snackbar("53".tr, "97".tr);
       }
     }
     update();
@@ -156,5 +163,15 @@ class CartControllerImp extends CartController {
   @override
   getTotalPrice() {
     return (priceorders - priceorders * discountCoupon! / 100);
+  }
+
+  @override
+  goToPageCheckout() {
+    if (data.isEmpty) return Get.snackbar("49".tr, "91".tr);
+    Get.toNamed(AppRoutes.checkout, arguments: {
+      "couponid": couponid ?? "0",
+      "priceorder": priceorders.toString(),
+      "discountCoupon": discountCoupon.toString(),
+    });
   }
 }

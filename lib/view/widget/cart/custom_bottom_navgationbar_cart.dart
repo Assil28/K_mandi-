@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/cart_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
-import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/view/widget/cart/buttoncart.dart';
 import 'package:k_mandi/view/widget/cart/custombottomcoupon.dart';
 
-class BottomNavgationBarCart extends StatelessWidget {
+class BottomNavgationBarCart extends GetView<CartControllerImp> {
   final String price;
   final String discount;
   final String shipping;
@@ -145,7 +144,7 @@ class BottomNavgationBarCart extends StatelessWidget {
             CustomButtonCart(
               textbutton: "71".tr,
               onPressed: () {
-                Get.toNamed(AppRoutes.checkout);
+                controller.goToPageCheckout();
               },
             )
           ],

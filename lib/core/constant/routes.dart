@@ -30,4 +30,8 @@ class AppRoutes {
 
   //Checkout
   static const String checkout = "/checkout";
+
+  //Orders 
+    static const String orderspending = "/orderspending";
+
 }

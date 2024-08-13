@@ -67,6 +67,9 @@ List<GetPage<dynamic>>? routes = [
 
    //CheckOut
       GetPage(name: AppRoutes.checkout, page: () => const Checkout()),
+
+      //Orders
+      GetPage(name: AppRoutes.orderspending, page: () => const OrdersPending()),
  
 ];
 
