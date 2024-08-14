@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/orders/pending_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
-import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/data/datasource/model/ordersmodel.dart';
 import 'package:jiffy/jiffy.dart';
 
@@ -24,13 +23,14 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold)),
                   const Spacer(),
-                  // Text(listdata.ordersDatetime!)
-                  // Text(
-                  //   Jiffy(listdata.ordersDatetime!, "yyyy-MM-dd").fromNow(),
-                  //   style: const TextStyle(
-                  //       color: AppColor.primaryColor,
-                  //       fontWeight: FontWeight.bold),
-                  // )
+                  Text(listdata.ordersDatetime!),
+                  Text(
+                    Jiffy.parse(listdata.ordersDatetime!, pattern: "yyyy-MM-dd")
+                        .fromNow(),
+                    style: const TextStyle(
+                        color: AppColor.primaryColor,
+                        fontWeight: FontWeight.bold),
+                  )
                 ],
               ),
               const Divider(),

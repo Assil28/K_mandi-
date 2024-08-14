@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/core/constant/apptheme.dart';
+import 'package:k_mandi/core/functions/fcmconfig.dart';
 import 'package:k_mandi/core/services/services.dart';
 
 class LocaleController extends GetxController {
@@ -45,8 +46,13 @@ class LocaleController extends GetxController {
   }
 
   @override
-  void onInit() async{
-     await requestPermissionLocation();
+  void onInit() async {
+
+    // pour la permession des notification
+    requestPermissionNotification();
+    // fcm config pour la notification bch yab9a en ecout
+    fcmconfig();
+    await requestPermissionLocation();
     String? sharedPrefLang = myServices.sharedPreferences.getString("lang");
 
     if (sharedPrefLang == "ar") {

@@ -95,6 +95,7 @@ class OrdersPendingController extends GetxController {
     // update();
   }
 
+  // lehna bch k tetbdale status mte3 l pending order ysir appelle lel function hedhy bch ta3mel refresh lel ui
   refrehOrder() {
     getOrders();
   }

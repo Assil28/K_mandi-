@@ -19,6 +19,7 @@ import 'package:k_mandi/view/screen/items.dart';
 import 'package:k_mandi/view/screen/myfavorite.dart';
 
 import 'package:k_mandi/view/screen/onboarding.dart';
+import 'package:k_mandi/view/screen/orders/pending.dart';
 import 'package:k_mandi/view/screen/productdetails.dart';
 
 // medem nesta3mel fel getx donc  bch na3mel List

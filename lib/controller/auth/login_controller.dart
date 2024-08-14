@@ -54,20 +54,23 @@ class LoginControllerImp extends LoginController {
             // lehna bch k yabda l user c deja connecté w 3awed dkhal lel application direct yhezo lel home page ( middleware) kif fazet l onboarding
             myServices.sharedPreferences.setString("step", "2");
 
+            String userid = myServices.sharedPreferences.getString("id")!;
+
+// 3malet subscribe f tipics (wa9et ya3mel login ) wehed f les users koll w wahed dedié l chaque user 
+// insubscribe bch yet7at f logout
+            FirebaseMessaging.instance.subscribeToTopic("users");
+            FirebaseMessaging.instance.subscribeToTopic("users$userid");
+
             // se deriger vers Home page
             Get.offNamed(
               AppRoutes.homePage,
             );
             //ken jit ne5dem flutter 3adi lezemni nzid G et.delet<LoginControllerImpl>(); bch yna7iha mel memoire k nemchi l route e5or
             // medem ne5dem bel GetX w fl main 3malet getPages f 3oudh l route directement w sta3melet list f 3oudh l map
-          }
-          else{
+          } else {
             // k yabde 3amel compte w me 3malouch eprouve
-             Get.offNamed(
-              AppRoutes.verifyCodeSignUp,arguments: {
-                "email":email.text
-              }
-            );
+            Get.offNamed(AppRoutes.verifyCodeSignUp,
+                arguments: {"email": email.text});
           }
         } else {
           Get.defaultDialog(title: "53".tr, middleText: "56".tr);
