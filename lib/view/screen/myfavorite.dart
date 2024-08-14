@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/controller/myfavorite_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
-import 'package:k_mandi/core/constant/routes.dart';
-import 'package:k_mandi/view/widget/customappbar.dart';
+
 import 'package:k_mandi/view/widget/myfavorite/customlistfavoriteitems.dart';
 
 class MyFavorite extends StatelessWidget {

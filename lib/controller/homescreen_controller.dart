@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_mandi/view/screen/home.dart';
+import 'package:k_mandi/view/screen/notification.dart';
 import 'package:k_mandi/view/screen/settings.dart';
 
 abstract class HomeScreenController extends GetxController {
@@ -22,10 +23,7 @@ class HomeScreenControllerImp extends HomeScreenController {
   // les pages l bch naviger binethom fl homeScreen
  List<Widget> listPage = [
     const HomePage(),
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Center(child: Text("Settings"))],
-    ),
+    NotificationView(),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [Center(child: Text("Profile"))],

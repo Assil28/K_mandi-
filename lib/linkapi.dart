@@ -11,6 +11,9 @@ class LinkApi {
 
   static const String test = "$serveur/test.php";
 
+  // Notification
+  static const String notification = "$serveur/notification.php";
+
   // Auth Links
   static const String signUp = "$serveur/auth/signup.php";
   static const String verifycodeSignUp = "$serveur/auth/verfiycode.php";
@@ -63,7 +66,7 @@ class LinkApi {
   static const String pendingorders =
       "$serveur/orders/pending.php"; //mes commandes en cours
   static const String ordersarchive =
-      "$serveur/orders/archive.php"; // les commandes l c'est bon weslouni 
+      "$serveur/orders/archive.php"; // les commandes l c'est bon weslouni
   static const String ordersdetails = "$serveur/orders/details.php";
   static const String ordersdelete = "$serveur/orders/delete.php";
 }
