@@ -5,6 +5,7 @@ import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/data/datasource/model/ordersmodel.dart';
 import 'package:jiffy/jiffy.dart';
+import 'package:k_mandi/view/widget/orders/dialograting.dart';
 
 class CardOrdersListArchive extends GetView<OrdersArchiveController> {
   final OrdersModel listdata;
@@ -61,6 +62,20 @@ class CardOrdersListArchive extends GetView<OrdersArchiveController> {
                     textColor: AppColor.secondColor,
                     child: Text("104".tr),
                   ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+
+                  // ken mezel me 9ayeùetch lordre todhhorli l boutton Rating sinon le
+                  if (listdata.ordersRating == "0")
+                    MaterialButton(
+                      onPressed: () {
+                        showDialogRating(context, listdata.ordersId!);
+                      },
+                      color: AppColor.thirdColor,
+                      textColor: AppColor.secondColor,
+                      child: Text("117".tr),
+                    ),
                 ],
               ),
             ],

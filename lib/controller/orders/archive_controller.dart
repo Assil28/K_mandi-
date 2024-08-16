@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:k_mandi/core/class/statusrequest.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/data/datasource/model/ordersmodel.dart';
@@ -68,6 +69,26 @@ class OrdersArchiveController extends GetxController {
       if (response['status'] == "success") {
         List listdata = response['data'];
         data.addAll(listdata.map((e) => OrdersModel.fromJson(e)));
+      } else {
+        statusRequest = StatusRequest.failure;
+      }
+      // End
+    }
+    update();
+  }
+
+  submitRating(String ordersid, double rating, String comment) async {
+    data.clear();
+    statusRequest = StatusRequest.loading;
+    update();
+    var response =
+        await ordersArchiveData.rating(ordersid, comment, rating.toString());
+    print("=============================== Controller $response ");
+    statusRequest = handlingData(response);
+    if (StatusRequest.success == statusRequest) {
+      // Start backend
+      if (response['status'] == "success") {
+        getOrders();
       } else {
         statusRequest = StatusRequest.failure;
       }

@@ -73,5 +73,6 @@ class LinkApi {
   //Offers
   static const String offers = "$serveur/offers.php";
 
-
+  //Rating
+  static const String rating = "$serveur/rating.php";
 }

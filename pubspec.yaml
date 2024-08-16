@@ -82,6 +82,8 @@ dependencies:
   lottie: ^3.1.2
   # son pour la snackbar (bch ta3mel hess k tousel notification wel appma7loula)
   flutter_ringtone_player: ^3.2.0
+  # Rating Dialog ( ta9yim )
+  rating_dialog: ^2.0.4
 
 dev_dependencies:
   flutter_test:
