@@ -69,4 +69,9 @@ class LinkApi {
       "$serveur/orders/archive.php"; // les commandes l c'est bon weslouni
   static const String ordersdetails = "$serveur/orders/details.php";
   static const String ordersdelete = "$serveur/orders/delete.php";
+
+  //Offers
+  static const String offers = "$serveur/offers.php";
+
+
 }

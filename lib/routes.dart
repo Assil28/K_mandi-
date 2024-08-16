@@ -19,6 +19,7 @@ import 'package:k_mandi/view/screen/home.dart';
 import 'package:k_mandi/view/screen/items.dart';
 import 'package:k_mandi/view/screen/language.dart';
 import 'package:k_mandi/view/screen/myfavorite.dart';
+import 'package:k_mandi/view/screen/offers.dart';
 
 import 'package:k_mandi/view/screen/onboarding.dart';
 import 'package:k_mandi/view/screen/orders/archive.dart';
@@ -78,6 +79,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoutes.orderspending, page: () => const OrdersPending()),
   GetPage(name: AppRoutes.ordersdetails, page: () => const OrdersDetails()),
   GetPage(name: AppRoutes.ordersarchive, page: () => const OrdersArchiveView()),
+
+  //Offers 
+  GetPage(name: AppRoutes.offers, page: () => const OffersView()),
 ];
 
 
