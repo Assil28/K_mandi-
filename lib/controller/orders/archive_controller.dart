@@ -3,10 +3,10 @@ import 'package:k_mandi/core/class/statusrequest.dart';
 import 'package:k_mandi/core/functions/handlingdatacontroller.dart';
 import 'package:k_mandi/core/services/services.dart';
 import 'package:k_mandi/data/datasource/model/ordersmodel.dart';
-import 'package:k_mandi/data/datasource/remote/orders/pending_data.dart';
+import 'package:k_mandi/data/datasource/remote/orders/archive_data.dart';
 
-class OrdersPendingController extends GetxController {
-  OrdersPendingData ordersPendingData = OrdersPendingData(Get.find());
+class OrdersArchiveController extends GetxController {
+  OrdersArchiveData ordersArchiveData = OrdersArchiveData(Get.find());
 
   List<OrdersModel> data = [];
 
@@ -59,7 +59,7 @@ class OrdersPendingController extends GetxController {
     data.clear();
     statusRequest = StatusRequest.loading;
     update();
-    var response = await ordersPendingData
+    var response = await ordersArchiveData
         .getData(myServices.sharedPreferences.getString("id")!);
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
@@ -68,25 +68,6 @@ class OrdersPendingController extends GetxController {
       if (response['status'] == "success") {
         List listdata = response['data'];
         data.addAll(listdata.map((e) => OrdersModel.fromJson(e)));
-      } else {
-        statusRequest = StatusRequest.failure;
-      }
-      // End
-    }
-    update();
-  }
-
-  deleteOrder(String orderid) async {
-    data.clear();
-    statusRequest = StatusRequest.loading;
-    update();
-    var response = await ordersPendingData.deleteData(orderid);
-    print("=============================== Controller $response ");
-    statusRequest = handlingData(response);
-    if (StatusRequest.success == statusRequest) {
-      // Start backend
-      if (response['status'] == "success") {
-        refrehOrder();
       } else {
         statusRequest = StatusRequest.failure;
       }

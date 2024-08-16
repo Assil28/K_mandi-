@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:k_mandi/controller/orders/pending_controller.dart';
+import 'package:k_mandi/controller/orders/archive_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/data/datasource/model/ordersmodel.dart';
 import 'package:jiffy/jiffy.dart';
 
-class CardOrdersList extends GetView<OrdersPendingController> {
+class CardOrdersListArchive extends GetView<OrdersArchiveController> {
   final OrdersModel listdata;
-  const CardOrdersList({super.key, required this.listdata});
+  const CardOrdersListArchive({super.key, required this.listdata});
 
   @override
   Widget build(BuildContext context) {
@@ -61,18 +61,6 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                     textColor: AppColor.secondColor,
                     child: Text("104".tr),
                   ),
-                  const SizedBox(width: 10),
-                  //hne gotlo ken l order mezel me sarlouch approuve donc je peux le supprimer (afficher l boutton de supprission) siono non
-                  if (listdata.ordersStatus! == "0")
-                    MaterialButton(
-                      onPressed: () {
-                        //delete the order by id
-                        controller.deleteOrder(listdata.ordersId!);
-                      },
-                      color: AppColor.thirdColor,
-                      textColor: AppColor.secondColor,
-                      child: Text("103".tr),
-                    )
                 ],
               ),
             ],
