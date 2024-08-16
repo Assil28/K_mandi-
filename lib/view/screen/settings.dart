@@ -4,6 +4,7 @@ import 'package:k_mandi/controller/settings_controller.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/constant/imageassets.dart';
 import 'package:k_mandi/core/constant/routes.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -49,51 +50,55 @@ class SettingsScreen extends StatelessWidget {
                   trailing: 
                   // switch to open or close notification
                   Switch(onChanged: (val) {}, value: true),
-                  title: Text("Disable Notificatios"),
+                  title: const Text("Disable Notificatios"),
                 ),
                  const Divider(),
                 ListTile(
                   onTap: () {
                     Get.toNamed(AppRoutes.orderspending);
                   },
-                  title: Text("Oders"), 
-                  trailing: Icon(Icons.card_travel),
+                  title: const Text("Oders"), 
+                  trailing: const Icon(Icons.card_travel),
+                ),
+                const Divider(),
+                ListTile(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.ordersarchive);
+                  },
+                  trailing: const Icon(Icons.archive_outlined),
+                  title: const Text("Archive Orders"),
                 ),
                 const Divider(),
                 ListTile(
                   onTap: () {
                     Get.toNamed(AppRoutes.addressview);
                   },
-                  trailing: Icon(Icons.archive_outlined),
-                  title: Text("Archive Orders"),
+                  trailing: const Icon(Icons.location_on_outlined),
+                  title: const Text("Address"),
                 ),
                 const Divider(),
                 ListTile(
-                  onTap: () {
-                    Get.toNamed(AppRoutes.addressview);
+                  onTap: () {},
+                  trailing: const Icon(Icons.help_outline_rounded),
+                  title: const Text("About us"),
+                ),
+                const Divider(),
+                ListTile(
+                  onTap: () async {
+                    
+                    // lorsque je clique sur contact us il mouvre lappelle 
+                    await  launchUrl(Uri.parse("tel:+21654504040"));
                   },
-                  trailing: Icon(Icons.location_on_outlined),
-                  title: Text("Address"),
-                ),
-                const Divider(),
-                ListTile(
-                  onTap: () {},
-                  trailing: Icon(Icons.help_outline_rounded),
-                  title: Text("About us"),
-                ),
-                const Divider(),
-                ListTile(
-                  onTap: () {},
-                  trailing: Icon(Icons.phone_callback_outlined),
-                  title: Text("Contact us"),
+                  trailing: const Icon(Icons.phone_callback_outlined),
+                  title: const Text("Contact us"),
                 ),
                 const Divider(),
                 ListTile(
                   onTap: () {
                     controller.logout();
                   },
-                  title: Text("Logout"),
-                  trailing: Icon(Icons.exit_to_app),
+                  title: const Text("Logout"),
+                  trailing: const Icon(Icons.exit_to_app),
                 ),
               ]),
             ),
