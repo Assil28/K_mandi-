@@ -28,9 +28,12 @@ class ItemsControllerImp extends ItemsController {
 
   MyServices myServices = Get.find();
 
+  String deliveryTime="";
+
   @override
   void onInit() {
         search = TextEditingController();
+
 
     intialData();
     super.onInit();
@@ -41,6 +44,7 @@ class ItemsControllerImp extends ItemsController {
     categories = Get.arguments['categories'];
     selectedCat = Get.arguments['selectedcat'];
     catid = Get.arguments['catid'];
+    deliveryTime=myServices.sharedPreferences.getString("deliveryTime")!;
     getItems(catid!);
   }
 

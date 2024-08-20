@@ -52,13 +52,13 @@ class HomePage extends StatelessWidget {
 
                         //2ém partie
                         // hedhi k kenet nejbed f title dynamic (mel BD)
-                        if (controller.settingsdata.isNotEmpty)
+                       
                           CustomCardHome(
                               title:
-                                  "${controller.settingsdata[0]['settings_titlehome']}"
+                                  "${controller.titleHomeCard}"
                                       .tr,
                               body:
-                                  "${controller.settingsdata[0]['settings_titlebody']}"
+                                  "${controller.bodyHomeCard}"
                                       .tr),
 
                         //3ém PArtie listView catgories

@@ -45,14 +45,14 @@ class SettingsScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Card(
               child: Column(mainAxisSize: MainAxisSize.min, children: [
-                ListTile(
-                  // onTap: () {},
-                  trailing: 
-                  // switch to open or close notification
-                  Switch(onChanged: (val) {}, value: true),
-                  title: const Text("Disable Notificatios"),
-                ),
-                 const Divider(),
+                // ListTile(
+                //   // onTap: () {},
+                //   trailing: 
+                //   // switch to open or close notification
+                //   Switch(onChanged: (val) {}, value: true),
+                //   title: const Text("Disable Notificatios"),
+                // ),
+                //  const Divider(),
                 ListTile(
                   onTap: () {
                     Get.toNamed(AppRoutes.orderspending);

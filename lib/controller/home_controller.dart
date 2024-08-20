@@ -28,6 +28,9 @@ class HomeControllerImp extends HomeController {
 
 // settings
   List settingsdata = [];
+  String titleHomeCard = "";
+  String bodyHomeCard = "";
+  String deliveryTime = "";
 
   late StatusRequest statusRequest;
 
@@ -60,6 +63,11 @@ class HomeControllerImp extends HomeController {
         items.addAll(response['items']['data']);
         //get settings (les textes constants )
         settingsdata.addAll(response['settings']['data']);
+        titleHomeCard = settingsdata[0]['settings_titlehome'];
+        bodyHomeCard = settingsdata[0]['settings_bodyhome'];
+        deliveryTime =  settingsdata[0]['settings_deliverytime'];
+        myServices.sharedPreferences.setString("deliveryTime", deliveryTime);
+        /*** settings end */
       } else {
         statusRequest = StatusRequest.failure;
       }
@@ -117,8 +125,7 @@ class SearchMixController extends GetxController {
     update();
   }
 
-
-   onSearchItems() {
+  onSearchItems() {
     isSearch = true;
     searchData();
     update();

@@ -33,9 +33,8 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                       Hero(
                         tag: "${itemsModel.itemsId}",
                         child: CachedNetworkImage(
-                          imageUrl: LinkApi.imagesItems +
-                              "/" +
-                              itemsModel.itemsImage!,
+                          imageUrl:
+                              "${LinkApi.imagesItems}/${itemsModel.itemsImage!}",
                           height: 100,
                           fit: BoxFit.fill,
                         ),
@@ -69,6 +68,28 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                       //     )
                       //   ],
                       // ),
+
+                      /* hne bch nhot delivery time */
+                      Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 5),
+                            child: const Icon(
+                              Icons.timer_sharp,
+                              color: AppColor.grey,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 4,
+                          ),
+                          Text(
+                            "${controller.deliveryTime} Minutes",
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(fontFamily: "sans"),
+                          ),
+                        ],
+                      ),
+                      /***** */
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -115,7 +136,7 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                     ]),
               ),
 
-              //lehna gotlo ken l produit fih discount bch yafficher l image discount m3ah sinon le 
+              //lehna gotlo ken l produit fih discount bch yafficher l image discount m3ah sinon le
               if (itemsModel.itemsDiscount != "0")
                 Positioned(
                   top: 4,
