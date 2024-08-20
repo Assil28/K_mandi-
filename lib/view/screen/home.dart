@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
                         const ListCategoriesHome(),
 
                         //4ém partie (ProductFor u)
-                        CustomTitleHome(title: "64".tr),
+                        CustomTitleHome(title: "118".tr),
 
                         //5ém Partie (liste des produit)
                         const ListItemsHome(),
