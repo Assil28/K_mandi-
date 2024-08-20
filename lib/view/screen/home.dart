@@ -47,7 +47,19 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         //2ém partie
-                        CustomCardHome(title: "62".tr, body: "63".tr),
+                        // hedhi k kenet nejbed f title static (constant)
+                        //CustomCardHome(title: "62".tr, body: "63".tr),
+
+                        //2ém partie
+                        // hedhi k kenet nejbed f title dynamic (mel BD)
+                        if (controller.settingsdata.isNotEmpty)
+                          CustomCardHome(
+                              title:
+                                  "${controller.settingsdata[0]['settings_titlehome']}"
+                                      .tr,
+                              body:
+                                  "${controller.settingsdata[0]['settings_titlebody']}"
+                                      .tr),
 
                         //3ém PArtie listView catgories
                         CustomTitleHome(title: "65".tr),

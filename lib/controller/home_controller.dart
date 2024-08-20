@@ -26,6 +26,9 @@ class HomeControllerImp extends HomeController {
   List items = [];
   List data = [];
 
+// settings
+  List settingsdata = [];
+
   late StatusRequest statusRequest;
 
   @override
@@ -55,6 +58,8 @@ class HomeControllerImp extends HomeController {
         // nejbed l catogies m data l jebtha mel back
         categories.addAll(response['categories']['data']);
         items.addAll(response['items']['data']);
+        //get settings (les textes constants )
+        settingsdata.addAll(response['settings']['data']);
       } else {
         statusRequest = StatusRequest.failure;
       }
