@@ -4,6 +4,7 @@ import 'package:k_mandi/controller/checkout_controller.dart';
 import 'package:k_mandi/core/class/handlingdataview.dart';
 import 'package:k_mandi/core/constant/color.dart';
 import 'package:k_mandi/core/constant/imageassets.dart';
+import 'package:k_mandi/core/constant/routes.dart';
 import 'package:k_mandi/view/widget/checkout/carddeliveerytype.dart';
 import 'package:k_mandi/view/widget/checkout/cardpaymentmethod.dart';
 import 'package:k_mandi/view/widget/checkout/cardshippingaddress.dart';
@@ -55,8 +56,7 @@ class Checkout extends StatelessWidget {
                   },
                   child: CardPaymentMethodCheckout(
                       title: "86".tr,
-                      isActive:
-                          controller.paymentMethod == "0" ? true : false),
+                      isActive: controller.paymentMethod == "0" ? true : false),
                 ),
                 const SizedBox(height: 10),
                 InkWell(
@@ -66,8 +66,7 @@ class Checkout extends StatelessWidget {
                   },
                   child: CardPaymentMethodCheckout(
                       title: "87".tr,
-                      isActive:
-                          controller.paymentMethod == "1" ? true : false),
+                      isActive: controller.paymentMethod == "1" ? true : false),
                 ),
                 /**************** */
 
@@ -91,9 +90,8 @@ class Checkout extends StatelessWidget {
                       child: CardDeliveryTypeCheckout(
                           imagename: AppImageAsset.deliveryImage2,
                           title: "89".tr,
-                          active: controller.deliveryType == "0"
-                              ? true
-                              : false),
+                          active:
+                              controller.deliveryType == "0" ? true : false),
                     ),
                     const SizedBox(width: 10),
                     InkWell(
@@ -104,9 +102,8 @@ class Checkout extends StatelessWidget {
                       child: CardDeliveryTypeCheckout(
                           imagename: AppImageAsset.drivethruImage,
                           title: "Revice",
-                          active: controller.deliveryType == "1"
-                              ? true
-                              : false),
+                          active:
+                              controller.deliveryType == "1" ? true : false),
                     ),
                   ],
                 ),
@@ -114,17 +111,34 @@ class Checkout extends StatelessWidget {
 
                 // If delivery => les Adresses du client
                 const SizedBox(height: 20),
-                if (controller.deliveryType == "delivery")
+                if (controller.deliveryType == "0")
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "90".tr,
-                        style: const TextStyle(
-                            color: AppColor.secondColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
-                      ),
+                      if (controller.dataaddress.isNotEmpty)
+                        Text(
+                          "90".tr,
+                          style: const TextStyle(
+                              color: AppColor.secondColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        ),
+                      if (controller.dataaddress.isEmpty)
+                        InkWell(
+                          onTap: () {
+                            Get.toNamed(AppRoutes.addressadd);
+                          },
+                          child: Container(
+                            child: Center(
+                                child: Text(
+                              "${"119".tr} \n Click Here",
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  color: AppColor.primaryColor,
+                                  fontWeight: FontWeight.bold),
+                            )),
+                          ),
+                        ),
                       const SizedBox(height: 10),
                       ...List.generate(
                         controller.dataaddress.length,

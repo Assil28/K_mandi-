@@ -54,6 +54,7 @@ class AddAddressDetailsController extends GetxController {
       // Start backend
       if (response['status'] == "success") {
         Get.offAllNamed(AppRoutes.homePage);
+        Get.snackbar("93".tr, "120".tr);
       } else {
         statusRequest = StatusRequest.failure;
       }

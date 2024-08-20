@@ -67,6 +67,7 @@ class CheckoutControllerImp extends CheckoutController {
       if (response['status'] == "success") {
         List listdata = response['data'];
         dataaddress.addAll(listdata.map((e) => AddressModel.fromJson(e)));
+        addressid = dataaddress[0].toString();
       } else {
         statusRequest = StatusRequest.failure;
       }
@@ -82,6 +83,9 @@ class CheckoutControllerImp extends CheckoutController {
     }
     if (deliveryType == null) {
       return Get.snackbar("92".tr, "96".tr);
+    }
+     if (dataaddress.isEmpty) {
+      return Get.snackbar("92".tr, "119".tr);
     }
 
     statusRequest = StatusRequest.loading;
